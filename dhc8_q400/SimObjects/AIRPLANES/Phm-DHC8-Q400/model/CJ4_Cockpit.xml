@@ -1,0 +1,1786 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ModelInfo>
+	<LODS>
+		<!-- Highest LOD -->
+		<!-- minimum display size in % (should be bounding sphere vertical screen size, sphere will often be slightly larger than you expect) -->
+		<!-- default minSize is 0 -->
+		<LOD minSize="300" ModelFile="CJ4_Cockpit_LOD00.gltf"/>
+		<LOD minSize="250" ModelFile="CJ4_Cockpit_LOD01.gltf"/>
+		<LOD minSize="100" ModelFile="CJ4_Cockpit_LOD02.gltf"/>
+		<LOD minSize="70" ModelFile="CJ4_Cockpit_LOD03.gltf"/>
+		<LOD minSize="6" ModelFile="CJ4_Cockpit_LOD04.gltf"/>
+		<!-- <LOD minSize="1" ModelFile="CJ4_Cockpit_LOD05.gltf"/> -->
+		<LOD minSize="1" ModelFile="CJ4_Cockpit_LOD06.gltf"/>
+	</LODS>
+	<Behaviors>
+		<Include ModelBehaviorFile="Asobo\Common.xml"/>
+		<Include ModelBehaviorFile="Asobo\NAVCOM\NavComSystem.xml"/>
+		<Include ModelBehaviorFile="Asobo\NAVCOM\NavComSystem.xml"/>
+		<Include ModelBehaviorFile="Asobo\Airliner\FMC.xml"/>
+		<Include ModelBehaviorFile="Asobo\GlassCockpit\AS3000.xml"/>
+
+	<!-- ELECTRICAL #############################################################################################################-->
+		<Component ID="ELECTRICAL">
+			<UseTemplate Name="ASOBO_ELECTRICAL_Switch_Battery_Master_Template">
+				<TYPE>ON_OFF_EMERGENCY</TYPE>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_ELECTRICAL_Switch_Avionics_Bus_Template">
+				<TYPE>MULTI_BUS</TYPE>
+				<MULTI_BUS_TYPE>ON_OFF_COMPOSITE</MULTI_BUS_TYPE>
+				<AVIONICS_BUS_ID_1>4</AVIONICS_BUS_ID_1>
+				<SOURCE_BUS_ID_1>1</SOURCE_BUS_ID_1>
+				<AVIONICS_CIRCUIT_ID_1>23</AVIONICS_CIRCUIT_ID_1>
+				<AVIONICS_BUS_ID_2>5</AVIONICS_BUS_ID_2>
+				<SOURCE_BUS_ID_2>2</SOURCE_BUS_ID_2>
+				<AVIONICS_CIRCUIT_ID_2>24</AVIONICS_CIRCUIT_ID_2>
+				<ID_COMPOSITE>2</ID_COMPOSITE>
+			</UseTemplate>
+			<Component ID="ELECTRICAL_Generators">
+				<DefaultTemplateParameters>
+					<TYPE>ON_OFF_RESET</TYPE>
+				</DefaultTemplateParameters>
+				<UseTemplate Name="ASOBO_ELECTRICAL_Switch_Alternator_Template">
+					<TT_DESCRIPTION_ID>@TT_Package.ELECTRICAL_SWITCH_GENERATOR_ACTION_LR</TT_DESCRIPTION_ID>
+					<TOOLTIP_TITLE>@TT_Package.ELECTRICAL_SWITCH_GENERATOR_TITLE</TOOLTIP_TITLE>
+					<TT_DESCRIPTION_INDEX>(R:1:@TT_Package.GT_STATE_LEFT)</TT_DESCRIPTION_INDEX>
+					<ID>1</ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_ELECTRICAL_Switch_Alternator_Template">
+					<TT_DESCRIPTION_ID>@TT_Package.ELECTRICAL_SWITCH_GENERATOR_ACTION_LR</TT_DESCRIPTION_ID>
+					<TOOLTIP_TITLE>@TT_Package.ELECTRICAL_SWITCH_GENERATOR_TITLE</TOOLTIP_TITLE>
+					<TT_DESCRIPTION_INDEX>(R:1:@TT_Package.GT_STATE_RIGHT)</TT_DESCRIPTION_INDEX>
+					<ID>2</ID>
+				</UseTemplate>
+			</Component>
+			<CameraTitle>Instrument02</CameraTitle>
+		</Component>
+
+	<!-- AUTOPILOT ################################-->
+		<Component ID="AUTOPILOT">
+			<UseTemplate Name="ASOBO_AUTOPILOT_Composite_Template">
+				<ANIM_BLENDWEIGHT>0.5</ANIM_BLENDWEIGHT>
+				<NO_TEXT_EMISSIVE>True</NO_TEXT_EMISSIVE>
+				<NO_INDICATOR>True</NO_INDICATOR>
+				<NO_LEVEL/>
+				<FLIGHT_DIRECTOR_1_NODE_ID>AUTOPILOT_Push_FlightDirector_1</FLIGHT_DIRECTOR_1_NODE_ID>
+				<FLIGHT_DIRECTOR_2_NODE_ID>AUTOPILOT_Push_FlightDirector_2</FLIGHT_DIRECTOR_2_NODE_ID>
+				<FLIGHT_DIRECTOR_1_ANIM_NAME>AUTOPILOT_Push_FlightDirector_1</FLIGHT_DIRECTOR_1_ANIM_NAME>
+				<FLIGHT_DIRECTOR_2_ANIM_NAME>AUTOPILOT_Push_FlightDirector_2</FLIGHT_DIRECTOR_2_ANIM_NAME>
+				<DONT_APPEND_ID>True</DONT_APPEND_ID>
+				<UP_DEC_DN_INC>True</UP_DEC_DN_INC>
+				<POTENTIOMETER>3</POTENTIOMETER>
+				<AUTOPILOT_DISC_TOGGLEABLE>True</AUTOPILOT_DISC_TOGGLEABLE>
+				<SPEED_KNOB_TYPE>PUSH</SPEED_KNOB_TYPE>
+				<SPEED_KNOB_NODE_ID>AUTOPILOT_Knob_SpeedMach</SPEED_KNOB_NODE_ID>
+				<SPEED_KNOB_ANIM_NAME_PUSH>AUTOPILOT_Push_SpeedToggle</SPEED_KNOB_ANIM_NAME_PUSH>
+				<SPEED_KNOB_ANIM_NAME>AUTOPILOT_Knob_SpeedMach</SPEED_KNOB_ANIM_NAME>
+				<NO_SPEED_BTN/>
+				<!-- BARO config -->
+				<BARO_KNOB_2_BARO_ID>1</BARO_KNOB_2_BARO_ID>
+				<BARO_KNOB_3_BARO_ID>2</BARO_KNOB_3_BARO_ID>
+				<BARO_KNOB_1_USE_PUSH_STD>True</BARO_KNOB_1_USE_PUSH_STD>
+				<BARO_KNOB_2_USE_PUSH_STD>True</BARO_KNOB_2_USE_PUSH_STD>
+				<!--VVV DYNAMIC VOR ID params VVV-->
+				<DYNAMIC_VOR_ID>True</DYNAMIC_VOR_ID>
+				<VOR_ID_1_SELECTED_CHECK>(L:RADIONAV_SOURCE) 3 !=</VOR_ID_1_SELECTED_CHECK>
+				<DYN_VOR_FORMAT_VALUE_OVERRIDE>(L:RADIONAV_SOURCE) 1 == if{ (R:1:@TT_Package.GT_STATE_NA) } els{ l0 '%d°' @sprintf }</DYN_VOR_FORMAT_VALUE_OVERRIDE>
+				<ID_1>1</ID_1>
+				<ID_2>2</ID_2>
+				<ON_AP_MASTER_SWITCH>YD_ON_OFF</ON_AP_MASTER_SWITCH>
+			</UseTemplate>
+		</Component>
+
+	<!-- AUDIO ################################-->
+		<Component ID="AUDIO">
+			<Parameters Type="Default">
+				<COM_COUNT>2</COM_COUNT>
+				<NAV_COUNT>2</NAV_COUNT>
+				<DME_COUNT>2</DME_COUNT>
+				<ADF_COUNT>1</ADF_COUNT>
+				<USE_MARKER_SENSITIVITY>False</USE_MARKER_SENSITIVITY>
+				<USE_MUTE>True</USE_MUTE>
+				<USE_SPEAKER>True</USE_SPEAKER>
+				<USE_INTERCOM>False</USE_INTERCOM>
+				<SEQ1_EMISSIVE_DRIVES_VISIBILITY>False</SEQ1_EMISSIVE_DRIVES_VISIBILITY>
+				<USE_NAV_RECEIVE>False</USE_NAV_RECEIVE>
+			</Parameters>
+			<UseTemplate Name="ASOBO_AudioPanel_Composite_Template">
+				<SUFFIX_ID>_1</SUFFIX_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_AudioPanel_Composite_Template">
+				<SUFFIX_ID>_2</SUFFIX_ID>
+			</UseTemplate>
+		</Component>
+
+	<!-- GLASS_COCKPIT #############################################################################################################-->
+		<Component ID="GlassCockpit">
+			<DefaultTemplateParameters>
+				<AS3000>CJ4</AS3000>
+			</DefaultTemplateParameters>
+			<UseTemplate Name="ASOBO_AS3000_Screen_Template">
+				<SCREEN_NODE_ID>PFD_Screen_1</SCREEN_NODE_ID>
+				<KEY_PREFIX>CJ4_PFD</KEY_PREFIX>
+				<CIRCUIT_ID>39</CIRCUIT_ID>
+				<DISPLAY>PFD</DISPLAY>
+				<AMBIENT_POTENTIOMETER>13</AMBIENT_POTENTIOMETER>
+				<POTENTIOMETER>15</POTENTIOMETER>
+				<INSTR_ID>1</INSTR_ID>
+				</UseTemplate>
+			<UseTemplate Name="ASOBO_AS3000_Screen_Template">
+				<SCREEN_NODE_ID>PFD_Screen_2</SCREEN_NODE_ID>
+				<KEY_PREFIX>CJ4_PFD</KEY_PREFIX>
+				<CIRCUIT_ID>40</CIRCUIT_ID>
+				<DISPLAY>PFD</DISPLAY>
+				<AMBIENT_POTENTIOMETER>11</AMBIENT_POTENTIOMETER>
+				<POTENTIOMETER>16</POTENTIOMETER>
+				<INSTR_ID>2</INSTR_ID>
+				</UseTemplate>
+			<UseTemplate Name="ASOBO_AS3000_Screen_Template">
+				<SCREEN_NODE_ID>MFD_Screen_1</SCREEN_NODE_ID>
+				<KEY_PREFIX>CJ4_MFD</KEY_PREFIX>
+				<CIRCUIT_ID>41</CIRCUIT_ID>
+				<DISPLAY>MFD</DISPLAY>
+				<AMBIENT_POTENTIOMETER>12</AMBIENT_POTENTIOMETER>
+				<POTENTIOMETER>17</POTENTIOMETER>
+				<INSTR_ID>1</INSTR_ID>
+				</UseTemplate>
+			<UseTemplate Name="ASOBO_AS3000_Screen_Template">
+				<SCREEN_NODE_ID>MFD_Screen_2</SCREEN_NODE_ID>
+				<KEY_PREFIX>CJ4_MFD</KEY_PREFIX>
+				<CIRCUIT_ID>42</CIRCUIT_ID>
+				<DISPLAY>MFD</DISPLAY>
+				<AMBIENT_POTENTIOMETER>10</AMBIENT_POTENTIOMETER>
+				<POTENTIOMETER>18</POTENTIOMETER>
+				<INSTR_ID>2</INSTR_ID>
+				</UseTemplate>
+			<UseTemplate Name="ASOBO_AS3000_Screen_Template">
+				<SCREEN_NODE_ID>AttitudeBackup_Screen</SCREEN_NODE_ID>
+				<KEY_PREFIX>CJ4_BackupDisplay</KEY_PREFIX>
+				<DISPLAY>BackupDisplay</DISPLAY>
+				<CIRCUIT_ID>49</CIRCUIT_ID>
+				<POTENTIOMETER>3</POTENTIOMETER>
+			</UseTemplate>
+			<Component ID="Detached_Control_Panels">
+				<UseTemplate Name="ASOBO_AS3000_Detached_Control_Panel_Template">
+					<PANEL_TYPE>UPPER</PANEL_TYPE>
+					<ID>1</ID>
+					<!-- Node_ids UPPER PANEL -->
+					<NODE_ID_NAV>push_pilot_DCP_NAV</NODE_ID_NAV>
+					<NODE_ID_PFD_MENU>push_pilot_DCP_PFDMENU</NODE_ID_PFD_MENU>
+					<NODE_ID_ESC>push_pilot_DCP_ESC</NODE_ID_ESC>
+					<NODE_ID_ET>push_pilot_DCP_ET</NODE_ID_ET>
+					<NODE_ID_FRMT>push_pilot_DCP_FRMT</NODE_ID_FRMT>
+					<NODE_ID_TERR_WX>push_pilot_DCP_TERRWX</NODE_ID_TERR_WX>
+					<NODE_ID_TFC>push_pilot_DCP_TFC</NODE_ID_TFC>
+					<NODE_ID_REFS_MENU>push_pilot_DCP_REFSMENU</NODE_ID_REFS_MENU>
+					<NODE_ID_MENU_ADV>MFD_Knob_MenuADV_1</NODE_ID_MENU_ADV>
+					<NODE_ID_DATA>MFD_Knob_Data_1</NODE_ID_DATA>
+					<ANIM_NAME_DATA_PUSH>MFD_Knob_Data_Push_1</ANIM_NAME_DATA_PUSH>
+					<NODE_ID_TILT>MFD_Knob_Tilt_1</NODE_ID_TILT>
+					<NODE_ID_RANGE>MFD_Knob_Range_1</NODE_ID_RANGE>
+					<ANIM_NAME_RANGE_PUSH>MFD_Knob_Range_Push_1</ANIM_NAME_RANGE_PUSH>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_AS3000_Detached_Control_Panel_Template">
+					<PANEL_TYPE>LOWER</PANEL_TYPE>
+					<ID>1</ID>
+					<!-- Node_ids LOWER PANEL -->
+					<NODE_ID_ESC>CCP_Push_esc_1</NODE_ID_ESC>
+					<NODE_ID_NAV_DATA>CCP_Push_navData_1</NODE_ID_NAV_DATA>
+					<NODE_ID_LWR_MENU>CCP_Push_lwrMenu_1</NODE_ID_LWR_MENU>
+					<NODE_ID_TERR_WX>CCP_Push_terrWX_1</NODE_ID_TERR_WX>
+					<NODE_ID_TFC>CCP_Push_tfc_1</NODE_ID_TFC>
+					<NODE_ID_SYS>CCP_Push_sys_1</NODE_ID_SYS>
+					<NODE_ID_ZOOM>CCP_Switch_zoom_1</NODE_ID_ZOOM>
+					<NODE_ID_CAS_PAGE>CCP_Push_casPage_1</NODE_ID_CAS_PAGE>
+					<NODE_ID_MENU_ADV>CCP_Knob_Outer_1</NODE_ID_MENU_ADV>
+					<NODE_ID_DATA>CCP_Knob_Inner_1</NODE_ID_DATA>
+					<ANIM_NAME_DATA_PUSH>CCP_Knob_Inner_Push_1</ANIM_NAME_DATA_PUSH>
+					<NODE_ID_ENG>CCP_Push_eng_1</NODE_ID_ENG>
+					<NODE_ID_UPR_MENU>CCP_Push_uprMenu_1</NODE_ID_UPR_MENU>
+					<NODE_ID_RANGE_STICK>CCP_Joystick_1</NODE_ID_RANGE_STICK>
+					<ANIM_NAME_RANGE_STICK_L_R>CCP_Joystick_L_R_1</ANIM_NAME_RANGE_STICK_L_R>
+					<ANIM_NAME_RANGE_STICK_DN_UP>CCP_Joystick_DN_UP_1</ANIM_NAME_RANGE_STICK_DN_UP>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_AS3000_Detached_Control_Panel_Template">
+					<PANEL_TYPE>UPPER</PANEL_TYPE>
+					<ID>2</ID>
+					<!-- Node_ids UPPER PANEL -->
+					<NODE_ID_NAV>push_coPilot_DCP_NAV</NODE_ID_NAV>
+					<NODE_ID_PFD_MENU>push_coPilot_DCP_PFDMENU</NODE_ID_PFD_MENU>
+					<NODE_ID_ESC>push_coPilot_DCP_ESC</NODE_ID_ESC>
+					<NODE_ID_ET>push_coPilot_DCP_ET</NODE_ID_ET>
+					<NODE_ID_FRMT>push_coPilot_DCP_FRMT</NODE_ID_FRMT>
+					<NODE_ID_TERR_WX>push_coPilot_DCP_TERRWX</NODE_ID_TERR_WX>
+					<NODE_ID_TFC>push_coPilot_DCP_TFC</NODE_ID_TFC>
+					<NODE_ID_REFS_MENU>push_coPilot_DCP_REFSMENU</NODE_ID_REFS_MENU>
+					<NODE_ID_MENU_ADV>MFD_Knob_MenuADV_2</NODE_ID_MENU_ADV>
+					<NODE_ID_DATA>MFD_Knob_Data_2</NODE_ID_DATA>
+					<ANIM_NAME_DATA_PUSH>MFD_Knob_Data_Push_2</ANIM_NAME_DATA_PUSH>
+					<NODE_ID_TILT>MFD_Knob_Tilt_2</NODE_ID_TILT>
+					<NODE_ID_RANGE>MFD_Knob_Range_2</NODE_ID_RANGE>
+					<ANIM_NAME_RANGE_PUSH>MFD_Knob_Range_Push_2</ANIM_NAME_RANGE_PUSH>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_AS3000_Detached_Control_Panel_Template">
+					<PANEL_TYPE>LOWER</PANEL_TYPE>
+					<ID>2</ID>
+					<!-- Node_ids LOWER PANEL -->
+					<NODE_ID_ESC>CCP_Push_esc_2</NODE_ID_ESC>
+					<NODE_ID_NAV_DATA>CCP_Push_navData_2</NODE_ID_NAV_DATA>
+					<NODE_ID_LWR_MENU>CCP_Push_lwrMenu_2</NODE_ID_LWR_MENU>
+					<NODE_ID_TERR_WX>CCP_Push_terrWX_2</NODE_ID_TERR_WX>
+					<NODE_ID_TFC>CCP_Push_tfc_2</NODE_ID_TFC>
+					<NODE_ID_SYS>CCP_Push_sys_2</NODE_ID_SYS>
+					<NODE_ID_ZOOM>CCP_Switch_zoom_2</NODE_ID_ZOOM>
+					<NODE_ID_CAS_PAGE>CCP_Push_casPage_2</NODE_ID_CAS_PAGE>
+					<NODE_ID_MENU_ADV>CCP_Knob_Inner_2</NODE_ID_MENU_ADV>
+					<NODE_ID_DATA>CCP_Knob_Outer_2</NODE_ID_DATA>
+					<ANIM_NAME_DATA_PUSH>CCP_Knob_Outer_Push_2</ANIM_NAME_DATA_PUSH>
+					<NODE_ID_ENG>CCP_Push_eng_2</NODE_ID_ENG>
+					<NODE_ID_UPR_MENU>CCP_Push_uprMenu_2</NODE_ID_UPR_MENU>
+					<NODE_ID_RANGE_STICK>CCP_Joystick_2</NODE_ID_RANGE_STICK>
+					<ANIM_NAME_RANGE_STICK_L_R>CCP_Joystick_L_R_2</ANIM_NAME_RANGE_STICK_L_R>
+					<ANIM_NAME_RANGE_STICK_DN_UP>CCP_Joystick_DN_UP_2</ANIM_NAME_RANGE_STICK_DN_UP>
+				</UseTemplate>
+			</Component>
+		</Component>
+
+	<!-- LIGHTING #############################################################################################################-->
+		<Component ID="LIGHTING">
+			<Component ID="LIGHTING_Controls">
+				<Component ID="LIGHTING_Switches">
+					<DefaultTemplateParameters>
+						<INTERACTION>Push</INTERACTION>
+						<PUSH_TYPE>AIRLINER</PUSH_TYPE>
+						<SEQ1_EMISSIVE_DRIVES_VISIBILITY>False</SEQ1_EMISSIVE_DRIVES_VISIBILITY>
+						<NO_SEQ2>True</NO_SEQ2>
+					</DefaultTemplateParameters>
+					<UseTemplate Name="ASOBO_LIGHTING_Push_Light_Navigation_Template">
+						<NODE_ID>LIGHTING_Push_Light_Navigation_1</NODE_ID>
+						<ANIM_NAME>LIGHTING_Push_Light_Navigation_1</ANIM_NAME>
+						<TT_DESCRIPTION_ID>@TT_Package.LIGHTING_SWITCH_LIGHT_NAV_ACTION_SET</TT_DESCRIPTION_ID>
+					</UseTemplate>
+					<UseTemplate Name="ASOBO_LIGHTING_Push_Light_Landing_Template">
+						<PART_ID>LIGHTING_Switch_Light_Landing</PART_ID>
+						<TT_DESCRIPTION_ID>@TT_Package.LIGHTING_SWITCH_LIGHT_LANDING_ACTION_SET</TT_DESCRIPTION_ID>
+					</UseTemplate>
+					<UseTemplate Name="ASOBO_LIGHTING_Push_Light_Taxi_Template">
+						<PART_ID>LIGHTING_Switch_Light_Taxi</PART_ID>
+						<TT_DESCRIPTION_ID>@TT_Package.LIGHTING_SWITCH_LIGHT_TAXI_ACTION_SET</TT_DESCRIPTION_ID>
+					</UseTemplate>
+					<UseTemplate Name="ASOBO_LIGHTING_Push_Light_Strobe_Template">
+						<TOOLTIP_TITLE>@TT_Package.LIGHTING_SWITCH_LIGHT_STROBE_TITLE</TOOLTIP_TITLE>
+						<TT_DESCRIPTION_ID>@TT_Package.LIGHTING_SWITCH_LIGHT_STROBE_ACTION</TT_DESCRIPTION_ID>
+					</UseTemplate>
+					<UseTemplate Name="ASOBO_LIGHTING_Push_Light_Logo_Template">
+						<TT_DESCRIPTION_ID>@TT_Package.LIGHTING_SWITCH_LIGHT_LOGO_ACTION_SET</TT_DESCRIPTION_ID>
+					</UseTemplate>
+					<UseTemplate Name="ASOBO_LIGHTING_Push_Light_Beacon_Template">
+						<TT_DESCRIPTION_ID>@TT_Package.LIGHTING_SWITCH_LIGHT_BEACON_ACTION_SET</TT_DESCRIPTION_ID>
+					</UseTemplate>
+					<UseTemplate Name="ASOBO_LIGHTING_Push_Light_Recognition_Template">
+						<TT_DESCRIPTION_ID>@TT_Package.LIGHTING_SWITCH_LIGHT_RECOGNITION_ACTION_SET</TT_DESCRIPTION_ID>
+					</UseTemplate>
+				</Component>
+				<Component ID="LIGHTING_Knobs">
+					<UseTemplate Name="ASOBO_LIGHTING_Knob_Panel_Template">
+						<ANIM_NAME>LIGHTING_Knob_Master</ANIM_NAME>
+						<NODE_ID>LIGHTING_Knob_Master</NODE_ID>
+						<WWISE_EVENT>lighting_master_knob</WWISE_EVENT>
+						<TOOLTIP_TITLE>@TT_Package.LIGHTING_KNOB_PANEL_TITLE</TOOLTIP_TITLE>
+						<TT_DESCRIPTION_ID>@TT_Package.LIGHTING_KNOB_PANEL_ACTION</TT_DESCRIPTION_ID>
+					</UseTemplate>
+					<UseTemplate Name="ASOBO_LIGHTING_Knob_Avionics_Template">
+						<ID>1</ID>
+						<NODE_ID>LIGHTING_Knob_PFD_1</NODE_ID>
+						<ANIM_NAME>LIGHTING_Knob_PFD_1</ANIM_NAME>
+						<TOOLTIP_TITLE>@TT_Package.LIGHTING_KNOB_PFD_TITLE</TOOLTIP_TITLE>
+						<TOOLTIP_TITLE_INDEX>@TT_Left</TOOLTIP_TITLE_INDEX>
+						<TT_DESCRIPTION_ID>@TT_Package.LIGHTING_KNOB_PFD_ACTION</TT_DESCRIPTION_ID>
+						<TT_DESCRIPTION_INDEX>@TT_Left</TT_DESCRIPTION_INDEX>
+						<POTENTIOMETER>15</POTENTIOMETER>
+						<WWISE_EVENT>lighting_large_knob_generic</WWISE_EVENT>
+					</UseTemplate>
+					<UseTemplate Name="ASOBO_LIGHTING_Knob_Avionics_Template">
+						<ID>2</ID>
+						<NODE_ID>LIGHTING_Knob_PFD_2</NODE_ID>
+						<ANIM_NAME>LIGHTING_Knob_PFD_2</ANIM_NAME>
+						<TOOLTIP_TITLE>@TT_Package.LIGHTING_KNOB_PFD_TITLE</TOOLTIP_TITLE>
+						<TOOLTIP_TITLE_INDEX>@TT_Right</TOOLTIP_TITLE_INDEX>
+						<TT_DESCRIPTION_ID>@TT_Package.LIGHTING_KNOB_PFD_ACTION</TT_DESCRIPTION_ID>
+						<TT_DESCRIPTION_INDEX>@TT_Right</TT_DESCRIPTION_INDEX>
+						<POTENTIOMETER>16</POTENTIOMETER>
+						<WWISE_EVENT>lighting_large_knob_generic</WWISE_EVENT>
+					</UseTemplate>
+					<UseTemplate Name="ASOBO_LIGHTING_Knob_Avionics_Template">
+						<ID>3</ID>
+						<NODE_ID>LIGHTING_Knob_Avionics_MFD_1</NODE_ID>
+						<ANIM_NAME>LIGHTING_Knob_Avionics_MFD_1</ANIM_NAME>
+						<POTENTIOMETER>17</POTENTIOMETER>
+						<WWISE_EVENT>lighting_small_knob_generic</WWISE_EVENT>
+						<TOOLTIP_TITLE>@TT_Package.LIGHTING_KNOB_MFD_TITLE</TOOLTIP_TITLE>
+						<TT_DESCRIPTION_ID>@TT_Package.LIGHTING_KNOB_MFD_ACTION</TT_DESCRIPTION_ID>
+						<TT_DESCRIPTION_INDEX>@TT_Left</TT_DESCRIPTION_INDEX>
+					</UseTemplate>
+					<UseTemplate Name="ASOBO_LIGHTING_Knob_Avionics_Template">
+						<ID>4</ID>
+						<NODE_ID>LIGHTING_Knob_Avionics_MFD_2</NODE_ID>
+						<ANIM_NAME>LIGHTING_Knob_Avionics_MFD_2</ANIM_NAME>
+						<POTENTIOMETER>18</POTENTIOMETER>
+						<WWISE_EVENT>lighting_small_knob_generic</WWISE_EVENT>
+						<TOOLTIP_TITLE>@TT_Package.LIGHTING_KNOB_MFD_TITLE</TOOLTIP_TITLE>
+						<TT_DESCRIPTION_ID>@TT_Package.LIGHTING_KNOB_MFD_ACTION</TT_DESCRIPTION_ID>
+						<TT_DESCRIPTION_INDEX>@TT_Right</TT_DESCRIPTION_INDEX>
+					</UseTemplate>
+					<UseTemplate Name="ASOBO_LIGHTING_Knob_Cabin_Template">
+						<ID>1</ID>
+						<ANIM_NAME>LIGHTING_Knob_Cabin_1</ANIM_NAME>
+						<NODE_ID>LIGHTING_Knob_Cabin_1</NODE_ID>
+						<SIMVAR_INDEX>1</SIMVAR_INDEX>
+						<TOOLTIP_TITLE>@TT_Package.LIGHTING_KNOB_CABIN_TITLE</TOOLTIP_TITLE>
+						<TT_DESCRIPTION_ID>@TT_Package.LIGHTING_KNOB_CABIN_ACTION</TT_DESCRIPTION_ID>
+						<TT_DESCRIPTION_INDEX>@TT_Left</TT_DESCRIPTION_INDEX>
+						<POTENTIOMETER>5</POTENTIOMETER>
+					</UseTemplate>
+					<UseTemplate Name="ASOBO_LIGHTING_Knob_Cabin_Template">
+						<ID>2</ID>
+						<ANIM_NAME>LIGHTING_Knob_Cabin_2</ANIM_NAME>
+						<NODE_ID>LIGHTING_Knob_Cabin_2</NODE_ID>
+						<SIMVAR_INDEX>2</SIMVAR_INDEX>
+						<TOOLTIP_TITLE>@TT_Package.LIGHTING_KNOB_CABIN_TITLE</TOOLTIP_TITLE>
+						<TT_DESCRIPTION_ID>@TT_Package.LIGHTING_KNOB_CABIN_ACTION</TT_DESCRIPTION_ID>
+						<TT_DESCRIPTION_INDEX>@TT_Right</TT_DESCRIPTION_INDEX>
+						<POTENTIOMETER>6</POTENTIOMETER>
+					</UseTemplate>
+					<UseTemplate Name="ASOBO_LIGHTING_Knob_Cabin_Template">
+						<ID>3</ID>
+						<ANIM_NAME>LIGHTING_Knob_Flood</ANIM_NAME>
+						<NODE_ID>LIGHTING_Knob_Flood</NODE_ID>
+						<TOOLTIP_TITLE>@TT_Package.LIGHTING_KNOB_LIGHT_FLOODLIGHT_BRIGHTNESS_TITLE</TOOLTIP_TITLE>
+						<TT_DESCRIPTION_ID>@TT_Package.LIGHTING_KNOB_LIGHT_FLOODLIGHT_BRIGHTNESS_ACTION</TT_DESCRIPTION_ID>
+						<SIMVAR_INDEX>3</SIMVAR_INDEX>
+					</UseTemplate>
+				</Component>
+				<Component ID="LIGHTING_Emissives">
+					<UseTemplate Name="ASOBO_LIGHTING_Panel_Emissive_Template">
+						<EMISSIVE_CODE>1</EMISSIVE_CODE>
+					</UseTemplate>
+					<UseTemplate Name="ASOBO_LIGHTING_Cabin_Emissive_Template">
+						<SIMVAR_INDEX>1</SIMVAR_INDEX>
+						<NODE_ID>LIGHTING_Cabin_1_Emissive</NODE_ID>
+						<EMISSIVE_CODE>0.1</EMISSIVE_CODE>
+						<POTENTIOMETER>5</POTENTIOMETER>
+					</UseTemplate>
+					<UseTemplate Name="ASOBO_LIGHTING_Cabin_Emissive_Template">
+						<SIMVAR_INDEX>2</SIMVAR_INDEX>
+						<NODE_ID>LIGHTING_Cabin_2_Emissive</NODE_ID>
+						<EMISSIVE_CODE>0.1</EMISSIVE_CODE>
+						<POTENTIOMETER>6</POTENTIOMETER>
+					</UseTemplate>
+					<UseTemplate Name="ASOBO_LIGHTING_Cabin_Emissive_Template">
+						<SIMVAR_INDEX>3</SIMVAR_INDEX>
+						<NODE_ID>LIGHTING_Flood_Emissive</NODE_ID>
+						<EMISSIVE_CODE>0.1</EMISSIVE_CODE>
+					</UseTemplate>
+					<UseTemplate Name="ASOBO_LIGHTING_Ambient_Template">
+						<BOUNCE_POTENTIOMETER_PERCENT>
+							(A:LIGHT CABIN ON:1, Bool) 0.45 * (A:LIGHT POTENTIOMETER:5, Percent) *
+							(A:LIGHT CABIN ON:2, Bool) 0.45 * (A:LIGHT POTENTIOMETER:6, Percent) * +
+							(A:LIGHT CABIN ON:3, Bool) 0.1 * (A:LIGHT POTENTIOMETER:4, Percent) * +
+						</BOUNCE_POTENTIOMETER_PERCENT>
+						<POTENTIOMETER>14</POTENTIOMETER>
+						<ID>1</ID>
+					</UseTemplate>
+				</Component>
+			</Component>
+			<CameraTitle>Instrument04</CameraTitle>
+		</Component>
+
+	<!-- HANDLING #############################################################################################################-->
+		<Component ID="HANDLING">
+			<UseTemplate Name="ASOBO_HANDLING_RudderPedals_Template">
+				<RUDDERPEDALS_TYPE>MIXED</RUDDERPEDALS_TYPE>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_HANDLING_Yoke_Hideable_Template">
+				<NODE_ID>HANDLING_Yoke_Hider_1</NODE_ID>
+				<ID>1</ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_HANDLING_Yoke_Hider_Template">
+				<ID>1</ID>
+				<NODE_ID>HANDLING_Yoke_Hider_1_Add_2</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_HANDLING_Yoke_Hideable_Template">
+			<NODE_ID>HANDLING_Yoke_Hider_2</NODE_ID>
+				<ID>2</ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_HANDLING_Yoke_Hider_Template">
+				<ID>2</ID>
+				<NODE_ID>HANDLING_Yoke_Hider_2_Add_2</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_HANDLING_Switch_ElevatorTrim_Template">
+				<NODE_ID>HANDLING_YOKE_Switch_ElevatorTrim_1</NODE_ID>
+				<ANIM_NAME>HANDLING_YOKE_Switch_ElevatorTrim_1</ANIM_NAME>
+				<MOMENTARY_MIN_DURATION>0.1</MOMENTARY_MIN_DURATION>
+				<TRIM_LIMIT>15</TRIM_LIMIT>
+				<IE_ELEVATOR_TRIM>YOKE</IE_ELEVATOR_TRIM>
+			</UseTemplate>
+		</Component>
+
+	<!-- ENGINE ################################-->
+		<Component ID="ENGINE">
+			<DefaultTemplateParameters>
+				<TYPE>AUTO_ON</TYPE>
+				<ONLY_SEQ1/>
+				<SEQ1_EMISSIVE_DRIVES_VISIBILITY>False</SEQ1_EMISSIVE_DRIVES_VISIBILITY>
+			</DefaultTemplateParameters>
+			<UseTemplate Name="ASOBO_ENGINE_Push_Ignition_Template">
+				<ID>1</ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_ENGINE_Push_Ignition_Template">
+				<ID>2</ID>
+			</UseTemplate>
+		</Component>
+
+	<!-- DEICE #################################-->
+		<Component ID="DEICE">
+			<DefaultTemplateParameters>
+				<INTERACTION>Push</INTERACTION>
+				<PUSH_TYPE>AIRLINER</PUSH_TYPE>
+				<ONLY_SEQ1>True</ONLY_SEQ1>
+				<SEQ1_EMISSIVE_DRIVES_VISIBILITY>False</SEQ1_EMISSIVE_DRIVES_VISIBILITY>
+				<SYNC_WITH_WINDSHIELD_STATE>True</SYNC_WITH_WINDSHIELD_STATE>
+			</DefaultTemplateParameters>
+			<UseTemplate Name="ASOBO_DEICE_Push_Pitot_Template">
+				<NUM_PITOTS>2</NUM_PITOTS>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_DEICE_Push_Engine_Template">
+				<TT_DESCRIPTION_ID>@TT_Package.DEICE_ANTI_ICE_ENGINE_ACTION_SET</TT_DESCRIPTION_ID>
+				<TT_DESCRIPTION_INDEX>(R:1:@TT_Package.GT_STATE_LEFT)</TT_DESCRIPTION_INDEX>
+				<ID>1</ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_DEICE_Push_Engine_Template">
+				<TT_DESCRIPTION_ID>@TT_Package.DEICE_ANTI_ICE_ENGINE_ACTION_SET</TT_DESCRIPTION_ID>
+				<TT_DESCRIPTION_INDEX>(R:1:@TT_Package.GT_STATE_RIGHT)</TT_DESCRIPTION_INDEX>
+				<ID>2</ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_DEICE_Push_Airframe_Template">
+				<ID>1</ID>
+				<ANIM_NAME>DEICE_PUSH_Airframe_1</ANIM_NAME>
+				<NODE_ID>DEICE_PUSH_Airframe_1</NODE_ID>
+				<TT_DESCRIPTION_ID>@TT_Package.DEICE_SWITCH_AIRFRAME_ACTION_SET_DUO</TT_DESCRIPTION_ID>
+				<TT_DESCRIPTION_INDEX>(R:1:@TT_Package.GT_STATE_LEFT)</TT_DESCRIPTION_INDEX>
+				<NUM_DEICE>2</NUM_DEICE>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_DEICE_Push_Airframe_Template">
+				<ID>2</ID>
+				<ANIM_NAME>DEICE_PUSH_Airframe_2</ANIM_NAME>
+				<NODE_ID>DEICE_PUSH_Airframe_2</NODE_ID>
+				<TT_DESCRIPTION_ID>@TT_Package.DEICE_SWITCH_AIRFRAME_ACTION_SET_DUO</TT_DESCRIPTION_ID>
+				<TT_DESCRIPTION_INDEX>(R:1:@TT_Package.GT_STATE_RIGHT)</TT_DESCRIPTION_INDEX>
+				<NUM_DEICE>2</NUM_DEICE>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_LIGHTING_Push_Light_Wing_Template">
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>DEICE_Push_Tail_1</NODE_ID>
+			</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>DEICE_Push_Tail_2</NODE_ID>
+			</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>SAFETY_Knob_Oxygen</NODE_ID>
+			</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>PASSENGER_Knob_Heat_1</NODE_ID>
+			</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>PASSENGER_Knob_Air_1</NODE_ID>
+			</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>PASSENGER_Knob_ClimateControl_1</NODE_ID>
+			</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>PRESSURIZATION_Push_Control</NODE_ID>
+			</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>LIGHTING_Push_Light_Pulse_TCAS</NODE_ID>
+			</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>PASSENGER_Knob_Air_3</NODE_ID>
+			</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>PASSENGER_Knob_Air_2</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>SAFETY_Switch_ELT</NODE_ID>
+			</UseTemplate>
+		</Component>
+
+	<!-- PEDESTAL #############################################################################################################-->
+		<Component ID="ENGINE_PEDESTAL">
+			<Component ID="ENGINE_Throttles">
+				<UseTemplate Name="ASOBO_ENGINE_Lever_Throttle_Template">
+					<TT_DESCRIPTION_ID>@TT_Package.ENGINE_THROTTLE_ACTION</TT_DESCRIPTION_ID>
+					<TT_DESCRIPTION_INDEX>1</TT_DESCRIPTION_INDEX>
+					<ID>1</ID>
+					<TOOLTIPID>TT:COCKPIT.TOOLTIPS.LEFT_THROTTLE_CONTROL</TOOLTIPID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_ENGINE_Lever_Throttle_Template">
+					<TT_DESCRIPTION_ID>@TT_Package.ENGINE_THROTTLE_ACTION</TT_DESCRIPTION_ID>
+					<TT_DESCRIPTION_INDEX>2</TT_DESCRIPTION_INDEX>
+					<ID>2</ID>
+					<TOOLTIPID>TT:COCKPIT.TOOLTIPS.RIGHT_THROTTLE_CONTROL</TOOLTIPID>
+				</UseTemplate>
+			</Component>
+			<UseTemplate Name="ASOBO_ENGINE_Push_Starter_Template">
+				<ID>1</ID>
+				<PART_ID>ENGINE_Switch_Starter1</PART_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_ENGINE_Push_Starter_Template">
+				<ID>2</ID>
+				<PART_ID>ENGINE_Switch_Starter2</PART_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_ENGINE_Push_Starter_Disengage_Template">
+				<TYPE>TWO_ENGINES</TYPE>
+			</UseTemplate>
+			<CameraTitle>Instrument05</CameraTitle>
+		</Component>
+		<Component ID="HANDLING_PEDESTAL">
+			<UseTemplate Name="ASOBO_HANDLING_Lever_Spoilers_Template">
+				<USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
+				<DRAG_ANIM_NAME>HANDLING_Lever_Spoilers</DRAG_ANIM_NAME>
+				<INVERT_IM_DRAG_INPUT_SCALAR>True</INVERT_IM_DRAG_INPUT_SCALAR>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_HANDLING_Lever_Flaps_Template">
+				<ANIM_TRIGGER_COUNT>5</ANIM_TRIGGER_COUNT>
+				<USE_TRAJECTORY_DRAG_MODE>True</USE_TRAJECTORY_DRAG_MODE>
+				<INVERT_IM_DRAG_INPUT_SCALAR>True</INVERT_IM_DRAG_INPUT_SCALAR>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_HANDLING_Switch_RudderTrim_Template">
+				<TRIM_LIMIT>16</TRIM_LIMIT>
+				<NO_RESET_PUSH/>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_HANDLING_Switch_AileronTrim_Template">
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_HANDLING_Switch_ElevatorTrim_Template">
+				<SECONDARY/>
+				<MOMENTARY_MIN_DURATION>0.1</MOMENTARY_MIN_DURATION>
+				<NODE_ID>HANDLING_Switch_ElevatorTrim_Secondary</NODE_ID>
+				<ANIM_NAME>HANDLING_Switch_ElevatorTrim_Secondary</ANIM_NAME>
+				<TRIM_LIMIT>15</TRIM_LIMIT>
+				<IE_ELEVATOR_TRIM>PEDESTRAL</IE_ELEVATOR_TRIM>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_HANDLING_Push_Secondary_ElevatorTrim_Available_Template">
+				<SEQ1_NODE_ID>HANDLING_Push_ElevatorTrim_Secondary_SEQ1</SEQ1_NODE_ID>
+				<COVER_NODE_ID>HANDLING_Push_ElevatorTrim_Secondary_Cover</COVER_NODE_ID>
+				<COVER_ANIM_NAME>HANDLING_Push_ElevatorTrim_Secondary_Cover</COVER_ANIM_NAME>
+				<NODE_ID>HANDLING_Push_ElevatorTrim_Secondary</NODE_ID>
+				<ANIM_NAME>HANDLING_Push_ElevatorTrim_Secondary</ANIM_NAME>
+				<ONLY_SEQ1/>
+				<SEQ1_EMISSIVE_DRIVES_VISIBILITY>False</SEQ1_EMISSIVE_DRIVES_VISIBILITY>
+			</UseTemplate>
+		</Component>
+		<!-- PRESSURIZATION -->
+		<Component ID="PRESSURIZATION">
+			<UseTemplate Name="ASOBO_PRESSURIZATION_Push_Dump_Template">
+				<IS_AIRLINER>True</IS_AIRLINER>
+				<COVER_NODE_ID>PRESSURIZATION_Push_Dump_Cover</COVER_NODE_ID>
+				<COVER_ANIM_NAME>PRESSURIZATION_Push_Dump_Cover</COVER_ANIM_NAME>
+				<SEQ1_EMISSIVE_CODE>(A:PRESSURIZATION DUMP SWITCH, Bool)</SEQ1_EMISSIVE_CODE>
+				<NO_SEQ2/>
+			</UseTemplate>
+		</Component>
+		<Component ID="FUEL_PEDESTAL">
+			<Parameters Type="Override">
+				<ENG_COUNT>2</ENG_COUNT>
+				<TYPE>VALVE_SET</TYPE>
+			</Parameters>
+			<UseTemplate Name="ASOBO_FUEL_Push_RunStop_Template">
+				<ID>1</ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_FUEL_Push_RunStop_Template">
+				<ID>2</ID>
+				<PART_ID>FUEL_RUNSTOP_2</PART_ID>
+			</UseTemplate>
+			<CameraTitle>Instrument04</CameraTitle>
+		</Component>
+		<Component ID="FMC_PEDESTAL">
+			<DefaultTemplateParameters>
+				<TYPE>CJ4</TYPE>
+				<POTENTIOMETER>3</POTENTIOMETER>
+				<SEQ1_SUFFIX></SEQ1_SUFFIX>
+				<NO_BRT_DIM_EMISSIVE>True</NO_BRT_DIM_EMISSIVE>
+			</DefaultTemplateParameters>
+			<UseTemplate Name="ASOBO_FMC_CJ4">
+				<FAILURE>(A:CIRCUIT ON:47, Bool)</FAILURE>
+				<ANIM_NEVER_FAILS>True</ANIM_NEVER_FAILS>
+				<ID>1</ID>
+				<NODE_ID_BRT_DIM>CDU_Push_BRTDIM_1</NODE_ID_BRT_DIM>
+				<ANIM_NAME_BRT_DIM>CDU_Push_BRTDIM_1</ANIM_NAME_BRT_DIM>
+				<NODE_ID_NEXT_PAGE>CDU_Push_NEXT_1</NODE_ID_NEXT_PAGE>
+				<ANIM_NAME_NEXT_PAGE>CDU_Push_NEXT_1</ANIM_NAME_NEXT_PAGE>
+				<NODE_ID_PREV_PAGE>CDU_Push_PREV_1</NODE_ID_PREV_PAGE>
+				<ANIM_NAME_PREV_PAGE>CDU_Push_PREV_1</ANIM_NAME_PREV_PAGE>
+				<NODE_ID_MFD_DATA>CDU_Push_MFDDATA_1</NODE_ID_MFD_DATA>
+				<ANIM_NAME_MFD_DATA>CDU_Push_MFDDATA_1</ANIM_NAME_MFD_DATA>
+				<NODE_ID_MFD_ADV>CDU_Push_MFDADV_1</NODE_ID_MFD_ADV>
+				<ANIM_NAME_MFD_ADV>CDU_Push_MFDADV_1</ANIM_NAME_MFD_ADV>
+				<NODE_ID_DSPL_MENU>CDU_Push_DSPLMENU_1</NODE_ID_DSPL_MENU>
+				<ANIM_NAME_DSPL_MENU>CDU_Push_DSPLMENU_1</ANIM_NAME_DSPL_MENU>
+				<NODE_ID_DEP_ARR>CDU_Push_DEPARR_1</NODE_ID_DEP_ARR>
+				<ANIM_NAME_DEP_ARR>CDU_Push_DEPARR_1</ANIM_NAME_DEP_ARR>
+				<NODE_ID_SCREEN>FMS_Screen_1</NODE_ID_SCREEN>
+			</UseTemplate>
+
+			<!--
+				Note - Interactions do not actually work currently are only events for the 1st FMC are handled HTML-side.
+				TODO List FMC :
+				- Rename First container so that it contains the ID (Then uncomment it)
+				- Fix animation of BRT/DIM.
+				- Fix Hitbox of L5 then uncomment
+				- Fix names overridden below?
+				- (Glasscockpit - some buttons send HTML events which do not exist yet, they need to be created when someone works on the glasscockpit side.)
+			-->
+			<UseTemplate Name="ASOBO_FMC_CJ4">
+				<FAILURE>(A:CIRCUIT ON:48, Bool)</FAILURE>
+				<ANIM_NEVER_FAILS>True</ANIM_NEVER_FAILS>
+				<ID>2</ID>
+				<NODE_ID_BRT_DIM>CDU_Push_BRTDIM_2</NODE_ID_BRT_DIM>
+				<ANIM_NAME_BRT_DIM>CDU_Push_BRTDIM_2</ANIM_NAME_BRT_DIM>
+				<NODE_ID_NEXT_PAGE>CDU_Push_NEXT_2</NODE_ID_NEXT_PAGE>
+				<ANIM_NAME_NEXT_PAGE>CDU_Push_NEXT_2</ANIM_NAME_NEXT_PAGE>
+				<NODE_ID_PREV_PAGE>CDU_Push_PREV_2</NODE_ID_PREV_PAGE>
+				<ANIM_NAME_PREV_PAGE>CDU_Push_PREV_2</ANIM_NAME_PREV_PAGE>
+				<NODE_ID_MFD_DATA>CDU_Push_MFDDATA_2</NODE_ID_MFD_DATA>
+				<ANIM_NAME_MFD_DATA>CDU_Push_MFDDATA_2</ANIM_NAME_MFD_DATA>
+				<NODE_ID_MFD_ADV>CDU_Push_MFDADV_2</NODE_ID_MFD_ADV>
+				<ANIM_NAME_MFD_ADV>CDU_Push_MFDADV_2</ANIM_NAME_MFD_ADV>
+				<NODE_ID_DSPL_MENU>CDU_Push_DSPLMENU_2</NODE_ID_DSPL_MENU>
+				<ANIM_NAME_DSPL_MENU>CDU_Push_DSPLMENU_2</ANIM_NAME_DSPL_MENU>
+				<NODE_ID_DEP_ARR>CDU_Push_DEPARR_2</NODE_ID_DEP_ARR>
+				<ANIM_NAME_DEP_ARR>CDU_Push_DEPARR_2</ANIM_NAME_DEP_ARR>
+				<NODE_ID_SCREEN>FMS_Screen_2</NODE_ID_SCREEN>
+				<!--
+				<NODE_ID_BRT_DIM>CDU_Push_BRTDIM_ID_2</NODE_ID_BRT_DIM>
+				<ANIM_NAME_BRT_DIM>CDU_Push_BRTDIM_ID_2</ANIM_NAME_BRT_DIM>
+				<NODE_ID_NEXT_PAGE>CDU_Push_NEXT_ID_2</NODE_ID_NEXT_PAGE>
+				<ANIM_NAME_NEXT_PAGE>CDU_Push_NEXT_ID_2</ANIM_NAME_NEXT_PAGE>
+				<NODE_ID_PREV_PAGE>CDU_Push_PREV_ID_2</NODE_ID_PREV_PAGE>
+				<ANIM_NAME_PREV_PAGE>CDU_Push_PREV_ID_2</ANIM_NAME_PREV_PAGE>
+				<NODE_ID_MFD_DATA>CDU_Push_MFDDATA_ID_2</NODE_ID_MFD_DATA>
+				<ANIM_NAME_MFD_DATA>CDU_Push_MFDDATA_ID_2</ANIM_NAME_MFD_DATA>
+				<NODE_ID_MFD_ADV>CDU_Push_MFDADV_ID_2</NODE_ID_MFD_ADV>
+				<ANIM_NAME_MFD_ADV>CDU_Push_MFDADV_ID_2</ANIM_NAME_MFD_ADV>
+				<NODE_ID_DSPL_MENU>CDU_Push_DSPLMENU_ID_2</NODE_ID_DSPL_MENU>
+				<ANIM_NAME_DSPL_MENU>CDU_Push_DSPLMENU_ID_2</ANIM_NAME_DSPL_MENU>
+				<NODE_ID_DEP_ARR>CDU_Push_DEPARR_ID_2</NODE_ID_DEP_ARR>
+				<ANIM_NAME_DEP_ARR>CDU_Push_DEPARR_ID_2</ANIM_NAME_DEP_ARR>
+				<NODE_ID_SCREEN>FMS_Screen_ID_2</NODE_ID_SCREEN>
+				-->
+			</UseTemplate>
+		</Component>
+
+	<!-- FUEL ##################################-->
+		<Component ID="FUEL">
+			<UseTemplate Name="ASOBO_FUEL_Switch_Crossfeed_Template">
+				<CIRCUIT_ID_PUMP_1>45</CIRCUIT_ID_PUMP_1>
+				<CIRCUIT_ID_PUMP_2>46</CIRCUIT_ID_PUMP_2>
+				<LEFTARROW>TurnLeft</LEFTARROW>
+				<RIGHTARROW>TurnRight</RIGHTARROW>
+			</UseTemplate>
+			<Component ID="FUEL_Pumps_Switches">
+				<Parameters Type="Default">
+					<SET_SEQ_EMISSIVE>SEQ1</SET_SEQ_EMISSIVE>
+					<SEQ1_EMISSIVE_DRIVES_VISIBILITY>False</SEQ1_EMISSIVE_DRIVES_VISIBILITY>
+				</Parameters>
+				<UseTemplate Name="ASOBO_FUEL_Push_Pump_Template">
+					<ID>1</ID>
+					<TT_DESCRIPTION_ID>@TT_Package.FUEL_PUSH_PUMP_BOOST_ACTION_SET</TT_DESCRIPTION_ID>
+					<TT_DESCRIPTION_INDEX>(R:1:@TT_Package.GT_STATE_LEFT)</TT_DESCRIPTION_INDEX>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_FUEL_Push_Pump_Template">
+					<ID>2</ID>
+					<TT_DESCRIPTION_ID>@TT_Package.FUEL_PUSH_PUMP_BOOST_ACTION_SET</TT_DESCRIPTION_ID>
+					<TT_DESCRIPTION_INDEX>(R:1:@TT_Package.GT_STATE_RIGHT)</TT_DESCRIPTION_INDEX>
+				</UseTemplate>
+			</Component>
+		</Component>
+
+	<!-- LANDING_GEAR #############################################################################################################-->
+		<Component ID="LANDING_GEAR" >
+			<UseTemplate Name="ASOBO_LANDING_GEAR_Switch_ParkingBrake_Template">
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_LANDING_GEAR_Lever_Gear_Template">
+			</UseTemplate>
+			<Component ID="LANDING_GEAR_Lights">
+				<Component ID="LANDING_GEAR_Lights_Safe">
+					<UseTemplate Name="ASOBO_LANDING_GEAR_Light_Template">
+						<NODE_ID>LANDING_GEAR_Light_3_DN</NODE_ID>
+						<GEAR_ID>0</GEAR_ID>
+					</UseTemplate>
+					<UseTemplate Name="ASOBO_LANDING_GEAR_Light_Template">
+						<NODE_ID>LANDING_GEAR_Light_1_DN</NODE_ID>
+						<GEAR_ID>1</GEAR_ID>
+					</UseTemplate>
+					<UseTemplate Name="ASOBO_LANDING_GEAR_Light_Template">
+						<NODE_ID>LANDING_GEAR_Light_2_DN</NODE_ID>
+						<GEAR_ID>2</GEAR_ID>
+					</UseTemplate>
+				</Component>
+				<Component ID="LANDING_GEAR_Lights_Unsafe">
+					<DefaultTemplateParameters>
+						<CUSTOM_RANGE>0.1 99.9</CUSTOM_RANGE>
+					</DefaultTemplateParameters>
+					<UseTemplate Name="ASOBO_LANDING_GEAR_Light_Template">
+						<NODE_ID>LANDING_GEAR_Light_3_UP</NODE_ID>
+						<GEAR_ID>0</GEAR_ID>
+					</UseTemplate>
+					<UseTemplate Name="ASOBO_LANDING_GEAR_Light_Template">
+						<NODE_ID>LANDING_GEAR_Light_1_UP</NODE_ID>
+						<GEAR_ID>1</GEAR_ID>
+					</UseTemplate>
+					<UseTemplate Name="ASOBO_LANDING_GEAR_Light_Template">
+						<NODE_ID>LANDING_GEAR_Light_2_UP</NODE_ID>
+						<GEAR_ID>2</GEAR_ID>
+					</UseTemplate>
+				</Component>
+			</Component>
+			<CameraTitle>Instrument03</CameraTitle>
+		</Component>
+
+		<!-- INSTRUMENTS ################################### -->
+		<Component ID="INSTRUMENTS">
+			<UseTemplate Name="ASOBO_INSTRUMENT_Indicator_AOA_Template">
+				<NO_NORM_WARN_INDICATOR>True</NO_NORM_WARN_INDICATOR>
+			</UseTemplate>
+		</Component>
+
+		<!-- SAFETY ###################################-->
+		<Component ID="SAFETY">
+			<UseTemplate Name="ASOBO_SAFETY_Push_Caution_Template">
+				<NODE_ID>SAFETY_Push_Caution_1</NODE_ID>
+				<ANIM_NAME>SAFETY_Push_Caution_1</ANIM_NAME>
+				<VAR_NAME>XMLVAR_CAUTION_1</VAR_NAME>
+				<SWITCH_POSITION_VAR>XMLVAR_SWITCH_CAUTION_1</SWITCH_POSITION_VAR>
+				<ID>1</ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_SAFETY_Push_Caution_Template">
+				<NODE_ID>SAFETY_Push_Caution_2</NODE_ID>
+				<ANIM_NAME>SAFETY_Push_Caution_2</ANIM_NAME>
+				<VAR_NAME>XMLVAR_CAUTION_2</VAR_NAME>
+				<SWITCH_POSITION_VAR>XMLVAR_SWITCH_CAUTION_2</SWITCH_POSITION_VAR>
+				<ID>2</ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_SAFETY_Push_Warning_Template">
+				<NODE_ID>SAFETY_Push_Warning_1</NODE_ID>
+				<ANIM_NAME>SAFETY_Push_Warning_1</ANIM_NAME>
+				<VAR_NAME>XMLVAR_WARNING_1</VAR_NAME>
+				<SWITCH_POSITION_VAR>XMLVAR_SWITCH_WARNING_1</SWITCH_POSITION_VAR>
+				<ID>1</ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_SAFETY_Push_Warning_Template">
+				<NODE_ID>SAFETY_Push_Warning_2</NODE_ID>
+				<ANIM_NAME>SAFETY_Push_Warning_2</ANIM_NAME>
+				<VAR_NAME>XMLVAR_WARNING_2</VAR_NAME>
+				<SWITCH_POSITION_VAR>XMLVAR_SWITCH_WARNING_2</SWITCH_POSITION_VAR>
+				<ID>2</ID>
+			</UseTemplate>
+		</Component>
+
+		<!-- MISC -->
+		<Component ID="ANIM_SETUP">
+			<UseTemplate Name="ASOBO_GT_Anim_Setup">
+				<ANIM_NAME>PASSENGER_KNOB_AIR_1</ANIM_NAME>
+				<PERCENT>50</PERCENT>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Anim_Setup">
+				<ANIM_NAME>PASSENGER_KNOB_AIR_2</ANIM_NAME>
+				<PERCENT>50</PERCENT>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Anim_Setup">
+				<ANIM_NAME>PASSENGER_KNOB_AIR_3</ANIM_NAME>
+				<PERCENT>50</PERCENT>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Anim_Setup">
+				<ANIM_NAME>SAFETY_KNOB_OXYGEN</ANIM_NAME>
+				<PERCENT>50</PERCENT>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Anim_Setup">
+				<ANIM_NAME>PASSENGER_KNOB_HEAT_1</ANIM_NAME>
+				<PERCENT>50</PERCENT>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Anim_Setup">
+				<ANIM_NAME>PASSENGER_KNOB_HEAT_2</ANIM_NAME>
+				<PERCENT>50</PERCENT>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Anim_Setup">
+				<ANIM_NAME>KNOB_PRESSOURCE</ANIM_NAME>
+				<PERCENT>50</PERCENT>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Anim_Setup">
+				<ANIM_NAME>PASSENGER_KNOB_CLIMATECONTROL_1</ANIM_NAME>
+				<PERCENT>50</PERCENT>
+			</UseTemplate>
+		</Component>
+		<Component ID="TT_INOP">
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>LIGHTING_Push_Light_Safety</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>LIGHTING_Push_Light_SeatBelt</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_pilot_DCP_CCPMENU</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_pilot_DCP_RADARMENU</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_pilot_DCP_TAWSMENU</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>lock_pilot_LEngineFireLight</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_pilot_LEngineFireLight</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_pilot_LFireBottleArmedLight</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_pilot_APP_SLEW_LR</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_pilot_APP_MAN</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_pilot_APP_AHRS</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_pilot_ADC</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_pilot_APP_PFD</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_pilot_APP_MFD</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_pilot_APP_CDU</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_coPilot_APP_CDU</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_coPilot_APP_MFD</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_coPilot_APP_PFD</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_coPilot_APP_ADC</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_coPilot_APP_AHRS</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_coPilot_APP_MAN</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_coPilot_APP_SLEW_LR</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>lock_coPilot_REngineFireLight</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_coPilot_REngineFireLight</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_coPilot_RFireBottleArmedLight</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_coPilot_DCP_RADARMENU</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_coPilot_DCP_TAWSMENU</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_coPilot_DCP_CCPMENU</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>switch_electricicalPanel_emerLights</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>switch_electricicalPanel_STBY_FTL</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>lever_pilot_oxygenSupply</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_pilot_oxygenMask_mic</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>lock_pilot_HYDShutoff_L</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_pilot_HYDShutoff_L</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_pilot_HYDShutoff_R</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>lock_pilot_HYDShutoff_R</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_pilot_fadecReset_L</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_pilot_fadecReset_R</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>DEICE_Push_XFlow</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_coPilotMic_pit</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_taws_GScancel</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_Ckpt_Spkr_mute</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_eventMarker</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_com1Tune</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>PASSENGER_Knob_Heat_2</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>push_oxygenMask</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>CCP_PUSH_CURSR</NODE_ID>
+				<CONTAINER_COUNT>2</CONTAINER_COUNT>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>CCP_PUSH_MEM3</NODE_ID>
+				<CONTAINER_COUNT>2</CONTAINER_COUNT>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>CCP_PUSH_CKLST</NODE_ID>
+				<CONTAINER_COUNT>2</CONTAINER_COUNT>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>CCP_PUSH_PASSBRIEF</NODE_ID>
+				<CONTAINER_COUNT>2</CONTAINER_COUNT>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>CCP_PUSH_DATABASE</NODE_ID>
+				<CONTAINER_COUNT>2</CONTAINER_COUNT>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>CCP_PUSH_CHART</NODE_ID>
+				<CONTAINER_COUNT>2</CONTAINER_COUNT>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>CCP_PUSH_MEM1</NODE_ID>
+				<CONTAINER_COUNT>2</CONTAINER_COUNT>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>CCP_PUSH_UNKNOWN</NODE_ID>
+				<CONTAINER_COUNT>2</CONTAINER_COUNT>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Interaction_Tooltip">
+				<NODE_ID>CCP_PUSH_MEM2</NODE_ID>
+				<CONTAINER_COUNT>2</CONTAINER_COUNT>
+			</UseTemplate>
+		</Component>
+
+		<Component ID="EMISSIVE_Setup">
+			<DefaultTemplateParameters>
+				<EMISSIVE_CODE>0.5</EMISSIVE_CODE>
+				<POTENTIOMETER>3</POTENTIOMETER>
+				<FAILURE>(A:LIGHT PANEL ON:1, Bool)</FAILURE>
+				<EXIT_TEMPLATE>ASOBO_GT_Component_Emissive_Gauge</EXIT_TEMPLATE>
+				<PARAM1>NODE_ID</PARAM1>
+			</DefaultTemplateParameters>
+			<UseTemplate Name="ASOBO_GT_Helper_Recursive_ID">
+				<FIRST_ID>1</FIRST_ID>
+				<MAX_ID>9</MAX_ID>
+				<!-- VV Recursive parameters VV -->
+				<PARAM1_PREFIX>DECAL00</PARAM1_PREFIX>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Helper_Recursive_ID">
+				<FIRST_ID>10</FIRST_ID>
+				<MAX_ID>40</MAX_ID>
+				<!-- VV Recursive parameters VV -->
+				<PARAM1_PREFIX>DECAL0</PARAM1_PREFIX>
+			</UseTemplate>
+			<!-- decals yoke -->
+			<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+				<NODE_ID>DECAL_Yoke_Left</NODE_ID>
+			</UseTemplate>
+			<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+				<NODE_ID>DECAL_Yoke_Right</NODE_ID>
+			</UseTemplate>
+			<!-- others -->
+			<Component ID="EMISSIVE_MERGED">
+				<!-- Engine_Fire -->
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>L_Engine_Fire_Decal</NODE_ID>
+					<EMISSIVE_CODE>0</EMISSIVE_CODE>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>R_Engine_Fire_Decal</NODE_ID>
+					<EMISSIVE_CODE>0</EMISSIVE_CODE>
+				</UseTemplate>
+				<!-- knobs -->
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>PASSENGER_Knob_Air_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>PASSENGER_Knob_Air_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>PASSENGER_Knob_Air_3</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>PASSENGER_Knob_ClimateControl_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>PASSENGER_Knob_Heat_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>PASSENGER_Knob_Heat_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>knob_pressSource</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>AUTOPILOT_Knob_Baro_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>MFD_Push_Select_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>MFD_Push_AutoTilt_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>AUTOPILOT_Knob_Baro_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>MFD_Push_Select_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>MFD_Push_AutoTilt_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>AUTOPILOT_Knob_Course_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>AUTOPILOT_Knob_SpeedMach</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>AUTOPILOT_Knob_Heading</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>AUTOPILOT_Knob_Altitude</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>AUTOPILOT_Knob_Course_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>LIGHTING_Knob_Master</NODE_ID>
+				</UseTemplate>
+				<!-- push buttons -->
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>FUEL_Push_Pump_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>FUEL_Push_Pump_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>push_pilot_HYDShutoff_L</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>push_pilot_HYDShutoff_R</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>push_pilot_fadecReset_L</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>push_pilot_fadecReset_R</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>ENGINE_Push_Ignition_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>ENGINE_Push_Ignition_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>DEICE_Push_Airframe_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>DEICE_Push_Airframe_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>DEICE_Push_Tail_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>DEICE_Push_Tail_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>DEICE_Push_Engine_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>DEICE_Push_Engine_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>DEICE_Push_Pitot_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>DEICE_Push_Pitot_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>DEICE_Push_XFlow</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>LIGHTING_Push_Light_Wing_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>PRESSURIZATION_Push_Dump</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>ENGINE_Push_Starter_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>ENGINE_Push_Starter_Disengage_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>ENGINE_Push_Starter_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>HANDLING_Push_ElevatorTrim_Secondary</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>LIGHTING_Push_Light_Beacon_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>LIGHTING_Push_Light_Landing_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>LIGHTING_Push_Light_Logo_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>LIGHTING_Push_Light_Navigation_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>LIGHTING_Push_Light_Taxi_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>LIGHTING_Push_Light_Pulse_TCAS</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>LIGHTING_Push_Light_Recognition_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>LIGHTING_Push_Light_Strobe_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>LIGHTING_Push_Light_Safety</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>LIGHTING_Push_Light_SeatBelt</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>PRESSURIZATION_Push_Control</NODE_ID>
+				</UseTemplate>
+
+				<!-- Knobs overhead emissive -->
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>LIGHTING_Knob_Cabin_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>LIGHTING_Knob_Flood</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>LIGHTING_Knob_Cabin_2</NODE_ID>
+				</UseTemplate>
+
+				<!-- FMS Emissive -->
+				<UseTemplate Name="ASOBO_GT_Helper_Recursive_ID">
+					<FIRST_ID>0</FIRST_ID>
+					<MAX_ID>9</MAX_ID>
+					<!-- VV Recursive parameters VV -->
+					<PARAM1_PREFIX>CDU_Push_</PARAM1_PREFIX>
+					<PARAM1_SUFFIX>_1</PARAM1_SUFFIX>
+				</UseTemplate>
+
+				<UseTemplate Name="ASOBO_GT_Helper_Recursive_ID">
+					<FIRST_ID>0</FIRST_ID>
+					<MAX_ID>9</MAX_ID>
+					<!-- VV Recursive parameters VV -->
+					<PARAM1_PREFIX>CDU_Push_</PARAM1_PREFIX>
+					<PARAM1_SUFFIX>_2</PARAM1_SUFFIX>
+				</UseTemplate>
+
+				<UseTemplate Name="ASOBO_GT_Helper_Recursive_ID">
+					<FIRST_ID>1</FIRST_ID>
+					<MAX_ID>6</MAX_ID>
+					<!-- VV Recursive parameters VV -->
+					<PARAM1_PREFIX>CDU_Push_R</PARAM1_PREFIX>
+					<PARAM1_SUFFIX>_1</PARAM1_SUFFIX>
+				</UseTemplate>
+
+				<UseTemplate Name="ASOBO_GT_Helper_Recursive_ID">
+					<FIRST_ID>1</FIRST_ID>
+					<MAX_ID>6</MAX_ID>
+					<!-- VV Recursive parameters VV -->
+					<PARAM1_PREFIX>CDU_Push_R</PARAM1_PREFIX>
+					<PARAM1_SUFFIX>_2</PARAM1_SUFFIX>
+				</UseTemplate>
+
+				<UseTemplate Name="ASOBO_GT_Helper_Recursive_ID">
+					<FIRST_ID>1</FIRST_ID>
+					<MAX_ID>6</MAX_ID>
+					<!-- VV Recursive parameters VV -->
+					<PARAM1_PREFIX>CDU_Push_L</PARAM1_PREFIX>
+					<PARAM1_SUFFIX>_1</PARAM1_SUFFIX>
+				</UseTemplate>
+
+				<UseTemplate Name="ASOBO_GT_Helper_Recursive_ID">
+					<FIRST_ID>1</FIRST_ID>
+					<MAX_ID>6</MAX_ID>
+					<!-- VV Recursive parameters VV -->
+					<PARAM1_PREFIX>CDU_Push_L</PARAM1_PREFIX>
+					<PARAM1_SUFFIX>_2</PARAM1_SUFFIX>
+				</UseTemplate>
+
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_A_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_A_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_B_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_B_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_BRTDIM_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_BRTDIM_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_C_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_C_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_clr_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_clr_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_D_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_D_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_DEPARR_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_DEPARR_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_DIR_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_DIR_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_div_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_div_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_dot_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_dot_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_DSPLMENU_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_DSPLMENU_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_E_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_E_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_EXEC_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_EXEC_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_F_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_F_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_FPLN_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_FPLN_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_G_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_G_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_H_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_H_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_I_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_I_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_IDX_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_IDX_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_J_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_J_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_K_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_K_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_L_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_L_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_LEGS_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_LEGS_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_M_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_M_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_MFDADV_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_MFDADV_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_MFDDATA_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_MFDDATA_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_MSG_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_MSG_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_N_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_N_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_NEXT_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_NEXT_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_O_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_O_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_P_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_P_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_PERF_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_PERF_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_plusMinus_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_plusMinus_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_PREV_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_PREV_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_Q_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_Q_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_R_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_R_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_S_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_S_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_SP_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_SP_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_T_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_T_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_TUN_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_TUN_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_U_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_U_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_V_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_V_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_W_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_W_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_X_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_X_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_Y_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_Y_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_Z_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CDU_Push_Z_2</NODE_ID>
+				</UseTemplate>
+
+				<!-- MFD Emissive 1 -->
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_casPage_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_chart_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_cklst_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_cursr_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_dataBase_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_eng_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_esc_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_lwrMenu_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_mem1_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_mem2_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_mem3_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_navData_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_passBrief_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_Select_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_sys_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_terrWX_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_tfc_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_unknown_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_uprMenu_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Switch_zoom_1</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>Static_Decal_Emis_1</NODE_ID>
+				</UseTemplate>
+
+				<!-- MFD Emissive 2 -->
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_casPage_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_chart_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_cklst_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_cursr_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_dataBase_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_eng_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_esc_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_lwrMenu_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_mem1_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_mem2_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_mem3_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_navData_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_passBrief_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_Select_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_sys_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_terrWX_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_tfc_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_unknown_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Push_uprMenu_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>CCP_Switch_zoom_2</NODE_ID>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Component_Emissive_Gauge">
+					<NODE_ID>Static_Decal_Emis_2</NODE_ID>
+				</UseTemplate>
+			</Component>
+
+			<!-- disabled as these are now merged into Panel_Decals meshes -->
+			<!-- <Component ID="MFC_Control"> -->
+				<!-- 1 -->
+				<!-- <UseTemplate Name="ASOBO_GT_Helper_Recursive_ID">
+					<FIRST_ID>1</FIRST_ID>
+					<MAX_ID>9</MAX_ID> -->
+					<!-- VV Recursive parameters VV -->
+					<!-- <PARAM1_PREFIX>DECAL_00</PARAM1_PREFIX>
+					<PARAM1_SUFFIX>_1</PARAM1_SUFFIX>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Helper_Recursive_ID">
+					<FIRST_ID>10</FIRST_ID>
+					<MAX_ID>17</MAX_ID> -->
+					<!-- VV Recursive parameters VV -->
+					<!-- <PARAM1_PREFIX>DECAL_0</PARAM1_PREFIX>
+					<PARAM1_SUFFIX>_1</PARAM1_SUFFIX>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Helper_Recursive_ID">
+					<FIRST_ID>19</FIRST_ID>
+					<MAX_ID>31</MAX_ID> -->
+					<!-- VV Recursive parameters VV -->
+					<!-- <PARAM1_PREFIX>DECAL_0</PARAM1_PREFIX>
+					<PARAM1_SUFFIX>_1</PARAM1_SUFFIX>
+				</UseTemplate> -->
+				<!-- 2 -->
+				<!-- <UseTemplate Name="ASOBO_GT_Helper_Recursive_ID">
+					<FIRST_ID>1</FIRST_ID>
+					<MAX_ID>9</MAX_ID> -->
+					<!-- VV Recursive parameters VV -->
+					<!-- <PARAM1_PREFIX>DECAL_00</PARAM1_PREFIX>
+					<PARAM1_SUFFIX>_2</PARAM1_SUFFIX>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Helper_Recursive_ID">
+					<FIRST_ID>10</FIRST_ID>
+					<MAX_ID>17</MAX_ID> -->
+					<!-- VV Recursive parameters VV -->
+					<!-- <PARAM1_PREFIX>DECAL_0</PARAM1_PREFIX>
+					<PARAM1_SUFFIX>_2</PARAM1_SUFFIX>
+				</UseTemplate>
+				<UseTemplate Name="ASOBO_GT_Helper_Recursive_ID">
+					<FIRST_ID>19</FIRST_ID>
+					<MAX_ID>31</MAX_ID> -->
+					<!-- VV Recursive parameters VV -->
+					<!-- <PARAM1_PREFIX>DECAL_0</PARAM1_PREFIX>
+					<PARAM1_SUFFIX>_2</PARAM1_SUFFIX>
+				</UseTemplate>
+			</Component> -->
+
+			<Component ID="AudioPanels">
+				<DefaultTemplateParameters>
+				<!-- <DONT_OVERRIDE_BASE_EMISSIVE>True</DONT_OVERRIDE_BASE_EMISSIVE> -->
+				</DefaultTemplateParameters>
+				<Component ID="PILOT">
+					<DefaultTemplateParameters>
+						<SUFFIX_ID>_1</SUFFIX_ID>
+					</DefaultTemplateParameters>
+					<OverrideTemplateParameters>
+						<AUDIOPANEL_1_NODE_ID>AudioPanel_Knob_COM_1#SUFFIX_ID#</AUDIOPANEL_1_NODE_ID>
+						<AUDIOPANEL_2_NODE_ID>AudioPanel_Knob_COM_2#SUFFIX_ID#</AUDIOPANEL_2_NODE_ID>
+						<AUDIOPANEL_3_NODE_ID>AudioPanel_Knob_AP#SUFFIX_ID#</AUDIOPANEL_3_NODE_ID>
+						<AUDIOPANEL_4_NODE_ID>AudioPanel_Knob_PA#SUFFIX_ID#</AUDIOPANEL_4_NODE_ID>
+						<AUDIOPANEL_5_NODE_ID>AudioPanel_Knob_NAV_1#SUFFIX_ID#</AUDIOPANEL_5_NODE_ID>
+						<AUDIOPANEL_6_NODE_ID>AudioPanel_Knob_NAV_2#SUFFIX_ID#</AUDIOPANEL_6_NODE_ID>
+						<AUDIOPANEL_7_NODE_ID>AudioPanel_Knob_DME_1#SUFFIX_ID#</AUDIOPANEL_7_NODE_ID>
+						<AUDIOPANEL_8_NODE_ID>AudioPanel_Knob_DME_2#SUFFIX_ID#</AUDIOPANEL_8_NODE_ID>
+						<AUDIOPANEL_9_NODE_ID>AudioPanel_Knob_Marker#SUFFIX_ID#</AUDIOPANEL_9_NODE_ID>
+						<AUDIOPANEL_10_NODE_ID>AudioPanel_Knob_ADF_1#SUFFIX_ID#</AUDIOPANEL_10_NODE_ID>
+						<AUDIOPANEL_11_NODE_ID>AudioPanel_Knob_INPH#SUFFIX_ID#</AUDIOPANEL_11_NODE_ID>
+						<AUDIOPANEL_12_NODE_ID>AudioPanel_Knob_KDPH#SUFFIX_ID#</AUDIOPANEL_12_NODE_ID>
+						<AUDIOPANEL_13_NODE_ID>AudioPanel_Knob_Mode#SUFFIX_ID#</AUDIOPANEL_13_NODE_ID>
+						<AUDIOPANEL_14_NODE_ID>AudioPanel_Knob_ST#SUFFIX_ID#</AUDIOPANEL_14_NODE_ID>
+						<AUDIOPANEL_15_NODE_ID>AudioPanel_Knob_Vox#SUFFIX_ID#</AUDIOPANEL_15_NODE_ID>
+						<AUDIOPANEL_16_NODE_ID>AudioPanel_Knob_Speaker#SUFFIX_ID#</AUDIOPANEL_16_NODE_ID>
+					</OverrideTemplateParameters>
+					<UseTemplate Name="ASOBO_GT_Helper_Recursive_ID">
+						<FIRST_ID>1</FIRST_ID>
+						<MAX_ID>16</MAX_ID>
+						<!-- VV Recursive parameters VV -->
+						<PROCESS_PARAM1>True</PROCESS_PARAM1>
+						<PARAM1_PREFIX>AUDIOPANEL_</PARAM1_PREFIX>
+						<PARAM1_SUFFIX>_NODE_ID</PARAM1_SUFFIX>
+					</UseTemplate>
+				</Component>
+				<Component ID="COPILOT">
+					<DefaultTemplateParameters>
+						<SUFFIX_ID>_2</SUFFIX_ID>
+					</DefaultTemplateParameters>
+					<OverrideTemplateParameters>
+						<AUDIOPANEL_1_NODE_ID>AudioPanel_Knob_COM_1#SUFFIX_ID#</AUDIOPANEL_1_NODE_ID>
+						<AUDIOPANEL_2_NODE_ID>AudioPanel_Knob_COM_2#SUFFIX_ID#</AUDIOPANEL_2_NODE_ID>
+						<AUDIOPANEL_3_NODE_ID>AudioPanel_Knob_AP#SUFFIX_ID#</AUDIOPANEL_3_NODE_ID>
+						<AUDIOPANEL_4_NODE_ID>AudioPanel_Knob_PA#SUFFIX_ID#</AUDIOPANEL_4_NODE_ID>
+						<AUDIOPANEL_5_NODE_ID>AudioPanel_Knob_NAV_1#SUFFIX_ID#</AUDIOPANEL_5_NODE_ID>
+						<AUDIOPANEL_6_NODE_ID>AudioPanel_Knob_NAV_2#SUFFIX_ID#</AUDIOPANEL_6_NODE_ID>
+						<AUDIOPANEL_7_NODE_ID>AudioPanel_Knob_DME_1#SUFFIX_ID#</AUDIOPANEL_7_NODE_ID>
+						<AUDIOPANEL_8_NODE_ID>AudioPanel_Knob_DME_2#SUFFIX_ID#</AUDIOPANEL_8_NODE_ID>
+						<AUDIOPANEL_9_NODE_ID>AudioPanel_Knob_Marker#SUFFIX_ID#</AUDIOPANEL_9_NODE_ID>
+						<AUDIOPANEL_10_NODE_ID>AudioPanel_Knob_ADF_1#SUFFIX_ID#</AUDIOPANEL_10_NODE_ID>
+						<AUDIOPANEL_11_NODE_ID>AudioPanel_Knob_INPH#SUFFIX_ID#</AUDIOPANEL_11_NODE_ID>
+						<AUDIOPANEL_12_NODE_ID>AudioPanel_Knob_KDPH#SUFFIX_ID#</AUDIOPANEL_12_NODE_ID>
+						<AUDIOPANEL_13_NODE_ID>AudioPanel_Knob_Mode#SUFFIX_ID#</AUDIOPANEL_13_NODE_ID>
+						<AUDIOPANEL_14_NODE_ID>AudioPanel_Knob_ST#SUFFIX_ID#</AUDIOPANEL_14_NODE_ID>
+						<AUDIOPANEL_15_NODE_ID>AudioPanel_Knob_Vox#SUFFIX_ID#</AUDIOPANEL_15_NODE_ID>
+						<AUDIOPANEL_16_NODE_ID>AudioPanel_Knob_Speaker#SUFFIX_ID#</AUDIOPANEL_16_NODE_ID>
+					</OverrideTemplateParameters>
+					<UseTemplate Name="ASOBO_GT_Helper_Recursive_ID">
+						<FIRST_ID>1</FIRST_ID>
+						<MAX_ID>16</MAX_ID>
+						<!-- VV Recursive parameters VV -->
+						<PROCESS_PARAM1>True</PROCESS_PARAM1>
+						<PARAM1_PREFIX>AUDIOPANEL_</PARAM1_PREFIX>
+						<PARAM1_SUFFIX>_NODE_ID</PARAM1_SUFFIX>
+					</UseTemplate>
+				</Component>
+			</Component>
+		</Component>
+	</Behaviors>
+</ModelInfo>

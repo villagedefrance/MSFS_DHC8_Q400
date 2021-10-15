@@ -1,0 +1,1409 @@
+{
+  "content": [
+    {
+      "path": "ContentInfo/PhmQ400/Thumbnail.jpg",
+      "size": 13520,
+      "date": 132417597640000000
+    },
+    {
+      "path": "Effects/LIGHT_ASOBO_BeaconBelly.fx",
+      "size": 1227,
+      "date": 132470804060000000
+    },
+    {
+      "path": "Effects/LIGHT_ASOBO_BeaconTop.fx",
+      "size": 1221,
+      "date": 132470804060000000
+    },
+    {
+      "path": "Effects/LIGHT_ASOBO_CabinBounce.fx",
+      "size": 1362,
+      "date": 132470804060000000
+    },
+    {
+      "path": "Effects/LIGHT_ASOBO_CabinBounceLarge.fx",
+      "size": 1362,
+      "date": 132470804060000000
+    },
+    {
+      "path": "Effects/LIGHT_ASOBO_CabinBounceSmall.fx",
+      "size": 1363,
+      "date": 132470804060000000
+    },
+    {
+      "path": "Effects/LIGHT_ASOBO_Landing.fx",
+      "size": 1228,
+      "date": 132470804060000000
+    },
+    {
+      "path": "Effects/LIGHT_ASOBO_LogoLight.fx",
+      "size": 1278,
+      "date": 132470804060000000
+    },
+    {
+      "path": "Effects/LIGHT_ASOBO_NavigationGreen.fx",
+      "size": 1230,
+      "date": 132470804060000000
+    },
+    {
+      "path": "Effects/LIGHT_ASOBO_NavigationRed.fx",
+      "size": 1227,
+      "date": 132470804060000000
+    },
+    {
+      "path": "Effects/LIGHT_ASOBO_NavigationWhite.fx",
+      "size": 1349,
+      "date": 132470804060000000
+    },
+    {
+      "path": "Effects/LIGHT_ASOBO_Taxi.fx",
+      "size": 1284,
+      "date": 132470804060000000
+    },
+    {
+      "path": "Effects/LIGHT_ASOBO_Wing.fx",
+      "size": 1342,
+      "date": 132470804060000000
+    },
+    {
+      "path": "Effects/LIGHT_ASOBO_WingLarge.fx",
+      "size": 1285,
+      "date": 132470804060000000
+    },
+    {
+      "path": "Effects/LIGHT_KingAir_BeaconTop.fx",
+      "size": 1225,
+      "date": 132558011940000000
+    },
+    {
+      "path": "Effects/LIGHT_KingAir_BeaconTopLeft.fx",
+      "size": 1227,
+      "date": 132558012800000000
+    },
+    {
+      "path": "Effects/LIGHT_KingAir_BeaconTopRight.fx",
+      "size": 1227,
+      "date": 132558012940000000
+    },
+    {
+      "path": "Effects/LIGHT_KingAir_NavigationGreen.fx",
+      "size": 1158,
+      "date": 132460438940000000
+    },
+    {
+      "path": "Effects/LIGHT_KingAir_NavigationRed.fx",
+      "size": 1155,
+      "date": 132460438940000000
+    },
+    {
+      "path": "Effects/LIGHT_KingAir_NavigationWhite.fx",
+      "size": 1353,
+      "date": 132461193220000000
+    },
+    {
+      "path": "Effects/LIGHT_KingAir_StrobeSimple.fx",
+      "size": 4714,
+      "date": 132558019980000000
+    },
+    {
+      "path": "Effects/LIGHT_Q400_LandingLarge.fx",
+      "size": 1277,
+      "date": 132643092247463616
+    },
+    {
+      "path": "Effects/LIGHT_Q400_TaxiLarge.fx",
+      "size": 1277,
+      "date": 132643084622733282
+    },
+    {
+      "path": "Effects/MSFS_Q400_NavWhite.fx",
+      "size": 4674,
+      "date": 132397117280000000
+    },
+    {
+      "path": "Effects/MSFS_Q400_RunwayLeft.fx",
+      "size": 3688,
+      "date": 132470804060000000
+    },
+    {
+      "path": "Effects/MSFS_Q400_RunwayRight.fx",
+      "size": 3688,
+      "date": 132470804060000000
+    },
+    {
+      "path": "Effects/MSFS_Q400_Strobe.fx",
+      "size": 3688,
+      "date": 132431783360000000
+    },
+    {
+      "path": "Effects/MSFS_Q400_StrobeDouble.fx",
+      "size": 3688,
+      "date": 132431783360000000
+    },
+    {
+      "path": "Effects/texture/FX_ulm-strobe01.PNG.dds",
+      "size": 87556,
+      "date": 132461143100000000
+    },
+    {
+      "path": "Effects/texture/fx_ulm-strobe01.png.DDS.FLAGS",
+      "size": 21,
+      "date": 132446993540000000
+    },
+    {
+      "path": "Effects/texture/FX_ulm-strobe01.PNG.DDS.json",
+      "size": 144,
+      "date": 132446993540000000
+    },
+    {
+      "path": "Q400_check.htm",
+      "size": 3374,
+      "date": 132652899097773496
+    },
+    {
+      "path": "Q400_ref.htm",
+      "size": 1342,
+      "date": 132652894844685177
+    },
+    {
+      "path": "layout.json",
+      "size": 10374,
+      "date": 132652899097773496
+    },
+    {
+      "path": "manifest.json",
+      "size": 342,
+      "date": 132652894844685177
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/ai.cfg",
+      "size": 801,
+      "date": 132489607420000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/aircraft.cfg",
+      "size": 15458,
+      "date": 132652896522000091
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/approach.FLT",
+      "size": 3841,
+      "date": 132519186410000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/apron.FLT",
+      "size": 4013,
+      "date": 132519186090000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/cameras.cfg",
+      "size": 17486,
+      "date": 132652896522030027
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/climb.flt",
+      "size": 3930,
+      "date": 132519186170000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/Checklist/KingAir350_Checklist.xml",
+      "size": 4040,
+      "date": 132394678440000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/Checklist/Library.xml",
+      "size": 2552,
+      "date": 132210816490000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/cockpit.cfg",
+      "size": 6461,
+      "date": 132652898303908869
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/cruise.FLT",
+      "size": 3929,
+      "date": 132519186220000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/engines.cfg",
+      "size": 16526,
+      "date": 132652897841884437
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/final.FLT",
+      "size": 3951,
+      "date": 132519186280000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/flight_model.cfg",
+      "size": 22251,
+      "date": 132652898095966688
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/gameplay.cfg",
+      "size": 331,
+      "date": 132652896522020097
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/hangar.flt",
+      "size": 3626,
+      "date": 132519186360000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/Notice.txt",
+      "size": 138,
+      "date": 132563900664868922
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/runway.flt",
+      "size": 1608,
+      "date": 132652895574721223
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/systems.cfg",
+      "size": 12944,
+      "date": 132652896522020097
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/taxi.flt",
+      "size": 3859,
+      "date": 132519186490000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/model/DHC8_Q400_V2.mdl",
+      "size": 2344940,
+      "date": 132652887240571543
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/model/CJ4_Cockpit.xml",
+      "size": 77302,
+      "date": 132689376410000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/model/CJ4_Cockpit_LOD00.bin",
+      "size": 11889812,
+      "date": 132698722811745323
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/model/CJ4_Cockpit_LOD00.gltf",
+      "size": 1264968,
+      "date": 132698722811855054
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/model/CJ4_Cockpit_LOD01.bin",
+      "size": 6866424,
+      "date": 132698722829071713
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/model/CJ4_Cockpit_LOD01.gltf",
+      "size": 990467,
+      "date": 132698722829151676
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/model/CJ4_Cockpit_LOD02.bin",
+      "size": 3300876,
+      "date": 132698722835992759
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/model/CJ4_Cockpit_LOD02.gltf",
+      "size": 303761,
+      "date": 132698722836032751
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/model/CJ4_Cockpit_LOD03.bin",
+      "size": 224712,
+      "date": 132698722837223720
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/model/CJ4_Cockpit_LOD03.gltf",
+      "size": 37153,
+      "date": 132698722837233721
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/model/CJ4_Cockpit_LOD04.bin",
+      "size": 53424,
+      "date": 132698722838057027
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/model/CJ4_Cockpit_LOD04.gltf",
+      "size": 20832,
+      "date": 132698722838067016
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/model/CJ4_Cockpit_LOD06.bin",
+      "size": 114,
+      "date": 132698722838269612
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/model/CJ4_Cockpit_LOD06.gltf",
+      "size": 2477,
+      "date": 132698722838269612
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/model/model.cfg",
+      "size": 57,
+      "date": 132652853112795129
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/panel/panel.cfg",
+      "size": 1021,
+      "date": 132274848300000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/panel/panel.xml",
+      "size": 16514,
+      "date": 132434224560000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/sound/Asobo_KingAir350.PC.PCK",
+      "size": 108984255,
+      "date": 132506180150000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/sound/sound.xml",
+      "size": 34911,
+      "date": 132503646030000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/soundai/Asobo_KingAir350_AI.PC.PCK",
+      "size": 8464347,
+      "date": 132443026360000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/soundai/soundai.xml",
+      "size": 2377,
+      "date": 132361009900000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/Civil Pilot.dds",
+      "size": 65664,
+      "date": 132137974900000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_AOA_ALBD.PNG.DDS",
+      "size": 2796344,
+      "date": 132698722606482841
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_AOA_ALBD.PNG.DDS.json",
+      "size": 102,
+      "date": 132698722606432860
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_AOA_COMP.PNG.DDS",
+      "size": 5592580,
+      "date": 132698722594775435
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_AOA_COMP.PNG.DDS.FLAGS",
+      "size": 21,
+      "date": 132648784070000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_AOA_COMP.PNG.DDS.json",
+      "size": 191,
+      "date": 132698722594699161
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_AOA_NORM.PNG.DDS",
+      "size": 5592560,
+      "date": 132698722489556326
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_AOA_NORM.PNG.DDS.json",
+      "size": 160,
+      "date": 132698722489446393
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_CABIN_01_ALBD.PNG.DDS",
+      "size": 2796344,
+      "date": 132698722262674445
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_CABIN_01_ALBD.PNG.DDS.json",
+      "size": 102,
+      "date": 132698722262614479
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_CABIN_01_COMP.PNG.DDS",
+      "size": 5592580,
+      "date": 132698722456141365
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_CABIN_01_COMP.PNG.DDS.FLAGS",
+      "size": 21,
+      "date": 132648784070000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_CABIN_01_COMP.PNG.DDS.json",
+      "size": 191,
+      "date": 132698722456101153
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_CABIN_01_NORM.PNG.DDS",
+      "size": 5592560,
+      "date": 132698722365616008
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_CABIN_01_NORM.PNG.DDS.json",
+      "size": 160,
+      "date": 132698722365506065
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_CABIN_02_ALBD.PNG.DDS",
+      "size": 2796344,
+      "date": 132698722486156234
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_CABIN_02_ALBD.PNG.DDS.json",
+      "size": 102,
+      "date": 132698722486126254
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_CABIN_02_COMP.PNG.DDS",
+      "size": 5592580,
+      "date": 132698722744184114
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_CABIN_02_COMP.PNG.DDS.FLAGS",
+      "size": 21,
+      "date": 132648784070000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_CABIN_02_COMP.PNG.DDS.json",
+      "size": 191,
+      "date": 132698722744110018
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_CABIN_02_NORM.PNG.DDS",
+      "size": 5592560,
+      "date": 132698722610913498
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_CABIN_02_NORM.PNG.DDS.json",
+      "size": 160,
+      "date": 132698722610793564
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_DECAL_ALBD.TIF.DDS",
+      "size": 1398256,
+      "date": 132698722600929067
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_DECAL_ALBD.TIF.DDS.FLAGS",
+      "size": 18,
+      "date": 132246935390000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_DECAL_ALBD.TIF.DDS.json",
+      "size": 119,
+      "date": 132698722600879093
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_DECAL_EMIS.PNG.DDS",
+      "size": 1398256,
+      "date": 132698722612512582
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_DECAL_EMIS.PNG.DDS.json",
+      "size": 119,
+      "date": 132698722612442622
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_DECAL_NORM.PNG.DDS",
+      "size": 5592560,
+      "date": 132698722596286738
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_DECAL_NORM.PNG.DDS.json",
+      "size": 160,
+      "date": 132698722596236767
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_DOOR_ALBD.PNG.DDS",
+      "size": 2796344,
+      "date": 132698722556707045
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_DOOR_ALBD.PNG.DDS.json",
+      "size": 102,
+      "date": 132698722556667072
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_DOOR_COMP.PNG.DDS",
+      "size": 5592580,
+      "date": 132698722697311416
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_DOOR_COMP.PNG.DDS.FLAGS",
+      "size": 21,
+      "date": 132648784070000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_DOOR_COMP.PNG.DDS.json",
+      "size": 191,
+      "date": 132698722697241237
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_DOOR_NORM.PNG.DDS",
+      "size": 5592560,
+      "date": 132698722706262296
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_DOOR_NORM.PNG.DDS.json",
+      "size": 160,
+      "date": 132698722706172347
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_FURNITURES_ALBD.PNG.DDS",
+      "size": 2796344,
+      "date": 132698722474219766
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_FURNITURES_ALBD.PNG.DDS.json",
+      "size": 102,
+      "date": 132698722474139816
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_FURNITURES_COMP.PNG.DDS",
+      "size": 5592580,
+      "date": 132698722788520808
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_FURNITURES_COMP.PNG.DDS.FLAGS",
+      "size": 21,
+      "date": 132648784070000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_FURNITURES_COMP.PNG.DDS.json",
+      "size": 191,
+      "date": 132698722788439756
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_FURNITURES_NORM.PNG.DDS",
+      "size": 5592560,
+      "date": 132698722599290005
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_FURNITURES_NORM.PNG.DDS.json",
+      "size": 160,
+      "date": 132698722599180060
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_INPUTS_ALBD.PNG.DDS",
+      "size": 2796344,
+      "date": 132698722466426873
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_INPUTS_ALBD.PNG.DDS.json",
+      "size": 102,
+      "date": 132698722466346913
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_INPUTS_COMP.PNG.DDS",
+      "size": 5592580,
+      "date": 132698722250178331
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_INPUTS_COMP.PNG.DDS.FLAGS",
+      "size": 21,
+      "date": 132648784070000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_INPUTS_COMP.PNG.DDS.json",
+      "size": 191,
+      "date": 132698722250098442
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_INPUTS_EMIS.PNG.DDS",
+      "size": 184,
+      "date": 132698722365785911
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_INPUTS_EMIS.PNG.DDS.json",
+      "size": 102,
+      "date": 132698722365765927
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_INPUTS_NORM.PNG.DDS",
+      "size": 5592560,
+      "date": 132698722272388893
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_INPUTS_NORM.PNG.DDS.json",
+      "size": 160,
+      "date": 132698722272308936
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_LIGHTBULBS_ALBD.PNG.DDS",
+      "size": 174904,
+      "date": 132698722263324074
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_LIGHTBULBS_ALBD.PNG.DDS.json",
+      "size": 102,
+      "date": 132698722263294091
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_LIGHTBULBS_EMIS.PNG.DDS",
+      "size": 174904,
+      "date": 132698722278867957
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_LIGHTBULBS_EMIS.PNG.DDS.json",
+      "size": 102,
+      "date": 132698722278857963
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_PANEL_ALBD.PNG.DDS",
+      "size": 2796344,
+      "date": 132698722618130641
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_PANEL_ALBD.PNG.DDS.json",
+      "size": 102,
+      "date": 132698722618100650
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_PANEL_COMP.PNG.DDS",
+      "size": 5592580,
+      "date": 132698722531426967
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_PANEL_COMP.PNG.DDS.FLAGS",
+      "size": 21,
+      "date": 132648784070000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_PANEL_COMP.PNG.DDS.json",
+      "size": 191,
+      "date": 132698722531386730
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_PANEL_NORM.PNG.DDS",
+      "size": 5592560,
+      "date": 132698722478242399
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_PANEL_NORM.PNG.DDS.json",
+      "size": 160,
+      "date": 132698722478142452
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_PEDALS_ALBD.PNG.DDS",
+      "size": 699192,
+      "date": 132698722698839868
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_PEDALS_ALBD.PNG.DDS.json",
+      "size": 102,
+      "date": 132698722698829869
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_PEDALS_COMP.PNG.DDS",
+      "size": 1398276,
+      "date": 132698722548853115
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_PEDALS_COMP.PNG.DDS.FLAGS",
+      "size": 21,
+      "date": 132648784070000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_PEDALS_COMP.PNG.DDS.json",
+      "size": 191,
+      "date": 132698722548802922
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_PEDALS_NORM.PNG.DDS",
+      "size": 1398256,
+      "date": 132698722476243536
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_PEDALS_NORM.PNG.DDS.json",
+      "size": 160,
+      "date": 132698722476223553
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_SEAT_CABIN_ALBD.PNG.DDS",
+      "size": 2796344,
+      "date": 132698722255703753
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_SEAT_CABIN_ALBD.PNG.DDS.json",
+      "size": 102,
+      "date": 132698722255653780
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_SEAT_CABIN_COMP.PNG.DDS",
+      "size": 5592580,
+      "date": 132698722415127954
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_SEAT_CABIN_COMP.PNG.DDS.FLAGS",
+      "size": 21,
+      "date": 132648784070000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_SEAT_CABIN_COMP.PNG.DDS.json",
+      "size": 191,
+      "date": 132698722415087963
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_SEAT_CABIN_NORM.PNG.DDS",
+      "size": 5592560,
+      "date": 132698722372627923
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_SEAT_CABIN_NORM.PNG.DDS.json",
+      "size": 160,
+      "date": 132698722372547973
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_SEAT_PILOT_ALBD.PNG.DDS",
+      "size": 2796344,
+      "date": 132698722278148365
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_SEAT_PILOT_ALBD.PNG.DDS.json",
+      "size": 102,
+      "date": 132698722278088402
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_SEAT_PILOT_COMP.PNG.DDS",
+      "size": 5592580,
+      "date": 132698722318815221
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_SEAT_PILOT_COMP.PNG.DDS.FLAGS",
+      "size": 21,
+      "date": 132648784070000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_SEAT_PILOT_COMP.PNG.DDS.json",
+      "size": 191,
+      "date": 132698722318754982
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_SEAT_PILOT_NORM.PNG.DDS",
+      "size": 5592560,
+      "date": 132698722460650173
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_SEAT_PILOT_NORM.PNG.DDS.json",
+      "size": 160,
+      "date": 132698722460540233
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_SHELL_ALBD.PNG.DDS",
+      "size": 2796344,
+      "date": 132698722269600483
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_SHELL_ALBD.PNG.DDS.json",
+      "size": 102,
+      "date": 132698722269530524
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_SHELL_COMP.PNG.DDS",
+      "size": 5592580,
+      "date": 132698722359680897
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_SHELL_COMP.PNG.DDS.FLAGS",
+      "size": 21,
+      "date": 132648784070000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_SHELL_COMP.PNG.DDS.json",
+      "size": 191,
+      "date": 132698722359612209
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_SHELL_NORM.PNG.DDS",
+      "size": 5592560,
+      "date": 132698722376357783
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_SHELL_NORM.PNG.DDS.json",
+      "size": 160,
+      "date": 132698722376277841
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_YOKE_ALBD.PNG.DDS",
+      "size": 2796344,
+      "date": 132698722536565970
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_YOKE_ALBD.PNG.DDS.json",
+      "size": 102,
+      "date": 132698722536535980
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_YOKE_COMP.PNG.DDS",
+      "size": 5592580,
+      "date": 132698722656582141
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_YOKE_COMP.PNG.DDS.FLAGS",
+      "size": 21,
+      "date": 132648784070000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_YOKE_COMP.PNG.DDS.json",
+      "size": 191,
+      "date": 132698722656506212
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_YOKE_NORM.PNG.DDS",
+      "size": 5592560,
+      "date": 132698722748047760
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/CJ4_COCKPIT_YOKE_NORM.PNG.DDS.json",
+      "size": 160,
+      "date": 132698722747927828
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/dash8q100_misc.dds",
+      "size": 1048704,
+      "date": 132491257920000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/dash8_engines.dds",
+      "size": 1048704,
+      "date": 132460458860000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/dash8_engines_l.dds",
+      "size": 1048704,
+      "date": 132456151400000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/dash8_fuselage1.dds",
+      "size": 1048704,
+      "date": 132460459060000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/dash8_fuselage1_l.dds",
+      "size": 1048704,
+      "date": 132476705260000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/dash8_fuselage2_left.dds",
+      "size": 1048704,
+      "date": 132460459240000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/dash8_fuselage2_left_l.dds",
+      "size": 1048704,
+      "date": 132476708920000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/dash8_fuselage2_right.dds",
+      "size": 1048704,
+      "date": 132460467660000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/dash8_fuselage2_right_l.dds",
+      "size": 1048704,
+      "date": 132476710780000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/dash8_leftfus.dds",
+      "size": 1048704,
+      "date": 132476672160000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/dash8_misc.dds",
+      "size": 1048704,
+      "date": 132496481740000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/dash8_misc_l.dds",
+      "size": 1048704,
+      "date": 132456157100000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/dash8_propfast.dds",
+      "size": 65664,
+      "date": 132137974460000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/dash8_propslow.dds",
+      "size": 65664,
+      "date": 132491307720000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/dash8_wing.dds",
+      "size": 1048704,
+      "date": 132456918980000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/dash8_wing_l.dds",
+      "size": 1048704,
+      "date": 132137974980000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/exterior_glass.dds",
+      "size": 65664,
+      "date": 132476676160000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/GlobalEnvTest.dds",
+      "size": 6291584,
+      "date": 127997309460000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/texture.cfg",
+      "size": 160,
+      "date": 132633803921889454
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture/thumbnail.jpg",
+      "size": 9520,
+      "date": 132460073300000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.9A-CQB/dash8_engines.dds",
+      "size": 1048704,
+      "date": 132496422220000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.9A-CQB/dash8_fuselage1.dds",
+      "size": 1048704,
+      "date": 132496422400000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.9A-CQB/dash8_fuselage2_left.dds",
+      "size": 1048704,
+      "date": 132496505240000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.9A-CQB/dash8_fuselage2_right.dds",
+      "size": 1048704,
+      "date": 132496505500000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.9A-CQB/Dash8_misc.dds",
+      "size": 1048704,
+      "date": 132496483880000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.9A-CQB/dash8_wing.dds",
+      "size": 1048704,
+      "date": 132496423340000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.9A-CQB/texture.cfg",
+      "size": 135,
+      "date": 132476666660000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.9A-CQB/thumbnail.jpg",
+      "size": 9406,
+      "date": 132496506920000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.C-GENU/dash8_engines.dds",
+      "size": 1048704,
+      "date": 132493353100000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.C-GENU/dash8_fuselage1.dds",
+      "size": 1048704,
+      "date": 132493862320000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.C-GENU/dash8_fuselage2_left.dds",
+      "size": 1048704,
+      "date": 132493862580000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.C-GENU/dash8_fuselage2_right.dds",
+      "size": 1048704,
+      "date": 132493862700000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.C-GENU/dash8_misc.dds",
+      "size": 1048704,
+      "date": 132496484180000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.C-GENU/dash8_wing.dds",
+      "size": 1048704,
+      "date": 132456918980000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.C-GENU/texture.cfg",
+      "size": 135,
+      "date": 132476666660000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.C-GENU/thumbnail.jpg",
+      "size": 9603,
+      "date": 132493898940000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.C-GKUK/dash8_engines.dds",
+      "size": 1048704,
+      "date": 132496422220000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.C-GKUK/dash8_fuselage1.dds",
+      "size": 1048704,
+      "date": 132496422400000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.C-GKUK/dash8_fuselage2_left.dds",
+      "size": 1048704,
+      "date": 132496505240000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.C-GKUK/dash8_fuselage2_right.dds",
+      "size": 1048704,
+      "date": 132496505500000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.C-GKUK/Dash8_misc.dds",
+      "size": 1048704,
+      "date": 132496483880000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.C-GKUK/dash8_wing.dds",
+      "size": 1048704,
+      "date": 132496423340000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.C-GKUK/texture.cfg",
+      "size": 135,
+      "date": 132476666660000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.C-GKUK/thumbnail.jpg",
+      "size": 9406,
+      "date": 132496506920000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.D-ABQT/dash8_engines.dds",
+      "size": 1048704,
+      "date": 132460458860000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.D-ABQT/dash8_fuselage1.dds",
+      "size": 1048704,
+      "date": 132476840260000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.D-ABQT/dash8_fuselage2_left.dds",
+      "size": 1048704,
+      "date": 132491327040000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.D-ABQT/dash8_fuselage2_right.dds",
+      "size": 1048704,
+      "date": 132491327220000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.D-ABQT/dash8_misc.dds",
+      "size": 1048704,
+      "date": 132496484460000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.D-ABQT/dash8_wing.dds",
+      "size": 1048704,
+      "date": 132456918980000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.D-ABQT/texture.cfg",
+      "size": 135,
+      "date": 132476666660000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.D-ABQT/thumbnail.jpg",
+      "size": 10050,
+      "date": 132478504100000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.ET-AQD/dash8_engines.dds",
+      "size": 1048704,
+      "date": 132460458860000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.ET-AQD/dash8_fuselage1.dds",
+      "size": 1048704,
+      "date": 132476840260000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.ET-AQD/dash8_fuselage2_left.dds",
+      "size": 1048704,
+      "date": 132491327040000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.ET-AQD/dash8_fuselage2_right.dds",
+      "size": 1048704,
+      "date": 132491327220000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.ET-AQD/dash8_misc.dds",
+      "size": 1048704,
+      "date": 132496484460000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.ET-AQD/dash8_wing.dds",
+      "size": 1048704,
+      "date": 132456918980000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.ET-AQD/texture.cfg",
+      "size": 135,
+      "date": 132476666660000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.ET-AQD/thumbnail.jpg",
+      "size": 10050,
+      "date": 132478504100000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.G-JEDI/dash8_engines.dds",
+      "size": 1048704,
+      "date": 132492447800000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.G-JEDI/dash8_fuselage1.dds",
+      "size": 1048704,
+      "date": 132492447960000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.G-JEDI/dash8_fuselage2_left.dds",
+      "size": 1048704,
+      "date": 132492464880000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.G-JEDI/dash8_fuselage2_right.dds",
+      "size": 1048704,
+      "date": 132492448340000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.G-JEDI/dash8_misc.dds",
+      "size": 1048704,
+      "date": 132496484700000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.G-JEDI/dash8_wing.dds",
+      "size": 1048704,
+      "date": 132456918980000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.G-JEDI/texture.cfg",
+      "size": 135,
+      "date": 132476666660000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.G-JEDI/thumbnail.jpg",
+      "size": 9941,
+      "date": 132492460860000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.JA841A/dash8_engines.dds",
+      "size": 1048704,
+      "date": 132493254020000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.JA841A/dash8_fuselage1.dds",
+      "size": 1048704,
+      "date": 132493209680000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.JA841A/dash8_fuselage2_left.dds",
+      "size": 1048704,
+      "date": 132493209880000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.JA841A/dash8_fuselage2_right.dds",
+      "size": 1048704,
+      "date": 132493226420000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.JA841A/dash8_misc.dds",
+      "size": 1048704,
+      "date": 132496486500000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.JA841A/dash8_wing.dds",
+      "size": 1048704,
+      "date": 132493230960000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.JA841A/texture.cfg",
+      "size": 135,
+      "date": 132476666660000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.JA841A/thumbnail.jpg",
+      "size": 10487,
+      "date": 132493233200000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.LN-RDI/dash8_engines.dds",
+      "size": 1048704,
+      "date": 132492447800000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.LN-RDI/dash8_fuselage1.dds",
+      "size": 1048704,
+      "date": 132492447960000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.LN-RDI/dash8_fuselage2_left.dds",
+      "size": 1048704,
+      "date": 132492464880000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.LN-RDI/dash8_fuselage2_right.dds",
+      "size": 1048704,
+      "date": 132492448340000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.LN-RDI/dash8_misc.dds",
+      "size": 1048704,
+      "date": 132496484700000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.LN-RDI/dash8_wing.dds",
+      "size": 1048704,
+      "date": 132456918980000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.LN-RDI/texture.cfg",
+      "size": 135,
+      "date": 132476666660000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.LN-RDI/thumbnail.jpg",
+      "size": 9941,
+      "date": 132492460860000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.N448QX/dash8_engines.dds",
+      "size": 1048704,
+      "date": 132460458860000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.N448QX/dash8_fuselage1.dds",
+      "size": 1048704,
+      "date": 132476840260000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.N448QX/dash8_fuselage2_left.dds",
+      "size": 1048704,
+      "date": 132491327040000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.N448QX/dash8_fuselage2_right.dds",
+      "size": 1048704,
+      "date": 132491327220000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.N448QX/dash8_misc.dds",
+      "size": 1048704,
+      "date": 132496484460000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.N448QX/dash8_wing.dds",
+      "size": 1048704,
+      "date": 132456918980000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.N448QX/texture.cfg",
+      "size": 135,
+      "date": 132476666660000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.N448QX/thumbnail.jpg",
+      "size": 10050,
+      "date": 132478504100000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.VH-QOU/dash8_engines.dds",
+      "size": 1048704,
+      "date": 132493254020000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.VH-QOU/dash8_fuselage1.dds",
+      "size": 1048704,
+      "date": 132493209680000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.VH-QOU/dash8_fuselage2_left.dds",
+      "size": 1048704,
+      "date": 132493209880000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.VH-QOU/dash8_fuselage2_right.dds",
+      "size": 1048704,
+      "date": 132493226420000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.VH-QOU/dash8_misc.dds",
+      "size": 1048704,
+      "date": 132496486500000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.VH-QOU/dash8_wing.dds",
+      "size": 1048704,
+      "date": 132493230960000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.VH-QOU/texture.cfg",
+      "size": 135,
+      "date": 132476666660000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.VH-QOU/thumbnail.jpg",
+      "size": 10487,
+      "date": 132493233200000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.YL-BBV/dash8_engines.dds",
+      "size": 1048704,
+      "date": 132493254020000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.YL-BBV/dash8_fuselage1.dds",
+      "size": 1048704,
+      "date": 132493209680000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.YL-BBV/dash8_fuselage2_left.dds",
+      "size": 1048704,
+      "date": 132493209880000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.YL-BBV/dash8_fuselage2_right.dds",
+      "size": 1048704,
+      "date": 132493226420000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.YL-BBV/dash8_misc.dds",
+      "size": 1048704,
+      "date": 132496486500000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.YL-BBV/dash8_wing.dds",
+      "size": 1048704,
+      "date": 132493230960000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.YL-BBV/texture.cfg",
+      "size": 135,
+      "date": 132476666660000000
+    },
+    {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.YL-BBV/thumbnail.jpg",
+      "size": 10487,
+      "date": 132493233200000000
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "dependencies": [
+    {
+      "name": "fs-base-propdefs",
+      "package_version": "0.1.2"
+    }
+  ],
+  "content_type": "AIRCRAFT",
+  "title": "DeHavilland DHC8-Q400",
+  "manufacturer": "DeHavilland",
+  "creator": "DreamWings / Philippe Marion",
+  "package_version": "0.2.0",
+  "minimum_game_version": "1.18.14",
+  "release_notes": {
+    "neutral": {
+      "LastUpdate": "",
+      "OlderHistory": ""
+    }
+  }
+}
