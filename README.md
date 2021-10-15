@@ -3,7 +3,6 @@
 
 Aircraft original Author: Dreamwings
 FSX original model file: Dash8Q400_x.mdl
-MSFS Conversion by Philippe Marion
 
 Virtual Cockpit:
 	MSFS default CJ4 by ASOBO.
