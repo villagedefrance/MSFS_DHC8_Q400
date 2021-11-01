@@ -15,7 +15,6 @@
 	<Behaviors>
 		<Include ModelBehaviorFile="Asobo\Common.xml"/>
 		<Include ModelBehaviorFile="Asobo\NAVCOM\NavComSystem.xml"/>
-		<Include ModelBehaviorFile="Asobo\NAVCOM\NavComSystem.xml"/>
 		<Include ModelBehaviorFile="Asobo\Airliner\FMC.xml"/>
 		<Include ModelBehaviorFile="Asobo\GlassCockpit\AS3000.xml"/>
 

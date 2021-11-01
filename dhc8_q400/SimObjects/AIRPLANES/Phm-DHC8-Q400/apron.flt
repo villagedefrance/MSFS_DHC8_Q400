@@ -76,8 +76,12 @@ IgnitionSwitch=1
 Afterburner=0
 
 [Propeller.1.0]
+prop_beta=1.5533430342749532382
+prop_max_rpm_percent=0
 
 [Propeller.2.0]
+prop_beta=1.5533430342749532382
+prop_max_rpm_percent=0
 
 [Fuel.0]
 TankSelector=Off

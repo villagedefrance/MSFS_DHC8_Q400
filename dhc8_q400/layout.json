@@ -6,6 +6,76 @@
       "date": 132417597640000000
     },
     {
+      "path": "Effects/fx_contrail_l.fx",
+      "size": 2549,
+      "date": 132652887240571543
+    },
+    {
+      "path": "Effects/fx_SnowEngineWash.fx",
+      "size": 3721,
+      "date": 132652887240571543
+    },
+    {
+      "path": "Effects/fx_sparks.fx",
+      "size": 5161,
+      "date": 132652887240571543
+    },
+    {
+      "path": "Effects/fx_spray.fx",
+      "size": 5086,
+      "date": 132652887240571543
+    },
+    {
+      "path": "Effects/fx_tchdrt.fx",
+      "size": 3828,
+      "date": 132652887240571543
+    },
+    {
+      "path": "Effects/fx_tchdwn_m.fx",
+      "size": 3781,
+      "date": 132652887240571543
+    },
+    {
+      "path": "Effects/fx_vaportrail_l.fx",
+      "size": 1294,
+      "date": 132652887240571543
+    },
+    {
+      "path": "Effects/fx_vaportrail_r.fx",
+      "size": 1294,
+      "date": 132652887240571543
+    },
+    {
+      "path": "Effects/fx_wake.fx",
+      "size": 2455,
+      "date": 132652887240571543
+    },
+    {
+      "path": "Effects/fx_WheelSnowSpray.fx",
+      "size": 3547,
+      "date": 132652887240571543
+    },
+    {
+      "path": "Effects/fx_WheelWetSpray.fx",
+      "size": 2600,
+      "date": 132652887240571543
+    },
+    {
+      "path": "Effects/fx_WetEngineWash.fx",
+      "size": 3772,
+      "date": 132652887240571543
+    },
+    {
+      "path": "Effects/fx_wingtipvortice_l.fx",
+      "size": 1291,
+      "date": 132652887240571543
+    },
+    {
+      "path": "Effects/fx_wingtipvortice_r.fx",
+      "size": 1291,
+      "date": 132652887240571543
+    },
+    {
       "path": "Effects/LIGHT_ASOBO_BeaconBelly.fx",
       "size": 1227,
       "date": 132470804060000000
@@ -42,7 +112,7 @@
     },
     {
       "path": "Effects/LIGHT_ASOBO_NavigationGreen.fx",
-      "size": 1230,
+      "size": 1226,
       "date": 132470804060000000
     },
     {
@@ -117,28 +187,78 @@
     },
     {
       "path": "Effects/MSFS_Q400_NavWhite.fx",
-      "size": 4674,
+      "size": 3707,
       "date": 132397117280000000
     },
     {
       "path": "Effects/MSFS_Q400_RunwayLeft.fx",
-      "size": 3688,
+      "size": 2332,
       "date": 132470804060000000
     },
     {
       "path": "Effects/MSFS_Q400_RunwayRight.fx",
-      "size": 3688,
+      "size": 2331,
       "date": 132470804060000000
     },
     {
       "path": "Effects/MSFS_Q400_Strobe.fx",
-      "size": 3688,
+      "size": 1333,
       "date": 132431783360000000
     },
     {
       "path": "Effects/MSFS_Q400_StrobeDouble.fx",
-      "size": 3688,
+      "size": 2463,
       "date": 132431783360000000
+    },
+    {
+      "path": "Effects/texture/fx_1.bmp",
+      "size": 288,
+      "date": 132652887240571543
+    },
+    {
+      "path": "Effects/texture/FX_1.BMP.DDS.json",
+      "size": 102,
+      "date": 132698722606432860
+    },
+    {
+      "path": "Effects/texture/fx_2.bmp",
+      "size": 288,
+      "date": 132652887240571543
+    },
+    {
+      "path": "Effects/texture/FX_2.BMP.DDS.json",
+      "size": 102,
+      "date": 132698722606432860
+    },
+    {
+      "path": "Effects/texture/fx_2_ng.bmp",
+      "size": 288,
+      "date": 132652887240571543
+    },
+    {
+      "path": "Effects/texture/FX_2_NG.BMP.DDS.json",
+      "size": 102,
+      "date": 132698722606432860
+    },
+    {
+      "path": "Effects/texture/fx_5.bmp",
+      "size": 288,
+      "date": 132652887240571543
+    },
+    {
+      "path": "Effects/texture/FX_5.BMP.DDS.json",
+      "size": 102,
+      "date": 132698722606432860
+    },
+    {
+      "path": "Effects/texture/fx_smoke.bmp",
+      "size": 288,
+      "date": 132652887240571543
+    },
+    {
+      "path": "Effects/texture/FX_SMOKE.BMP.DDS.json",
+      "size": 102,
+      "date": 132698722606432860
     },
     {
       "path": "Effects/texture/FX_ulm-strobe01.PNG.dds",
@@ -154,6 +274,26 @@
       "path": "Effects/texture/FX_ulm-strobe01.PNG.DDS.json",
       "size": 144,
       "date": 132446993540000000
+    },
+    {
+      "path": "Effects/texture/fx_wake_2.bmp",
+      "size": 288,
+      "date": 132652887240571543
+    },
+    {
+      "path": "Effects/texture/FX_WAKE_2.BMP.DDS.json",
+      "size": 102,
+      "date": 132698722606432860
+    },
+    {
+      "path": "Effects/texture/fx_Wake_3.bmp",
+      "size": 288,
+      "date": 132652887240571543
+    },
+    {
+      "path": "Effects/texture/FX_WAKE_3.BMP.DDS.json",
+      "size": 102,
+      "date": 132698722606432860
     },
     {
       "path": "Q400_check.htm",
@@ -177,12 +317,12 @@
     },
     {
       "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/ai.cfg",
-      "size": 801,
+      "size": 811,
       "date": 132489607420000000
     },
     {
       "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/aircraft.cfg",
-      "size": 15458,
+      "size": 14465,
       "date": 132652896522000091
     },
     {
@@ -197,7 +337,7 @@
     },
     {
       "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/cameras.cfg",
-      "size": 17486,
+      "size": 21544,
       "date": 132652896522030027
     },
     {
@@ -207,17 +347,17 @@
     },
     {
       "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/Checklist/KingAir350_Checklist.xml",
-      "size": 4040,
+      "size": 4007,
       "date": 132394678440000000
     },
     {
       "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/Checklist/Library.xml",
-      "size": 2552,
+      "size": 2497,
       "date": 132210816490000000
     },
     {
       "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/cockpit.cfg",
-      "size": 6461,
+      "size": 5065,
       "date": 132652898303908869
     },
     {
@@ -227,7 +367,7 @@
     },
     {
       "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/engines.cfg",
-      "size": 16526,
+      "size": 15935,
       "date": 132652897841884437
     },
     {
@@ -237,17 +377,17 @@
     },
     {
       "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/flight_model.cfg",
-      "size": 22251,
+      "size": 29694,
       "date": 132652898095966688
     },
     {
       "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/gameplay.cfg",
-      "size": 331,
+      "size": 1283,
       "date": 132652896522020097
     },
     {
       "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/hangar.flt",
-      "size": 3626,
+      "size": 3135,
       "date": 132519186360000000
     },
     {
@@ -257,12 +397,12 @@
     },
     {
       "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/runway.flt",
-      "size": 1608,
+      "size": 3305,
       "date": 132652895574721223
     },
     {
       "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/systems.cfg",
-      "size": 12944,
+      "size": 16074,
       "date": 132652896522020097
     },
     {
@@ -271,13 +411,18 @@
       "date": 132519186490000000
     },
     {
+      "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/model/Dash8Q400_x.mdl",
+      "size": 2324146,
+      "date": 132652887240571543
+    },
+    {
       "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/model/DHC8_Q400_V2.mdl",
-      "size": 2344940,
+      "size": 2324146,
       "date": 132652887240571543
     },
     {
       "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/model/CJ4_Cockpit.xml",
-      "size": 77302,
+      "size": 77040,
       "date": 132689376410000000
     },
     {
@@ -342,27 +487,27 @@
     },
     {
       "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/model/model.cfg",
-      "size": 57,
+      "size": 600,
       "date": 132652853112795129
     },
     {
       "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/panel/panel.cfg",
-      "size": 1021,
+      "size": 1078,
       "date": 132274848300000000
     },
     {
       "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/panel/panel.xml",
-      "size": 16514,
+      "size": 16161,
       "date": 132434224560000000
     },
     {
       "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/sound/Asobo_KingAir350.PC.PCK",
-      "size": 108984255,
+      "size": 74465385,
       "date": 132506180150000000
     },
     {
       "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/sound/sound.xml",
-      "size": 34911,
+      "size": 34816,
       "date": 132503646030000000
     },
     {
@@ -997,7 +1142,7 @@
     },
     {
       "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.9A-CQB/texture.cfg",
-      "size": 135,
+      "size": 276,
       "date": 132476666660000000
     },
     {
@@ -1037,7 +1182,7 @@
     },
     {
       "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.C-GENU/texture.cfg",
-      "size": 135,
+      "size": 276,
       "date": 132476666660000000
     },
     {
@@ -1077,7 +1222,7 @@
     },
     {
       "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.C-GKUK/texture.cfg",
-      "size": 135,
+      "size": 276,
       "date": 132476666660000000
     },
     {
@@ -1117,7 +1262,7 @@
     },
     {
       "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.D-ABQT/texture.cfg",
-      "size": 135,
+      "size": 276,
       "date": 132476666660000000
     },
     {
@@ -1157,7 +1302,7 @@
     },
     {
       "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.ET-AQD/texture.cfg",
-      "size": 135,
+      "size": 276,
       "date": 132476666660000000
     },
     {
@@ -1197,7 +1342,7 @@
     },
     {
       "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.G-JEDI/texture.cfg",
-      "size": 135,
+      "size": 276,
       "date": 132476666660000000
     },
     {
@@ -1237,7 +1382,7 @@
     },
     {
       "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.JA841A/texture.cfg",
-      "size": 135,
+      "size": 276,
       "date": 132476666660000000
     },
     {
@@ -1277,7 +1422,7 @@
     },
     {
       "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.LN-RDI/texture.cfg",
-      "size": 135,
+      "size": 276,
       "date": 132476666660000000
     },
     {
@@ -1317,7 +1462,7 @@
     },
     {
       "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.N448QX/texture.cfg",
-      "size": 135,
+      "size": 276,
       "date": 132476666660000000
     },
     {
@@ -1357,7 +1502,7 @@
     },
     {
       "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.VH-QOU/texture.cfg",
-      "size": 135,
+      "size": 276,
       "date": 132476666660000000
     },
     {
@@ -1397,7 +1542,7 @@
     },
     {
       "path": "SimObjects/AIRPLANES/Phm-DHC8-Q400/texture.YL-BBV/texture.cfg",
-      "size": 135,
+      "size": 276,
       "date": 132476666660000000
     },
     {
